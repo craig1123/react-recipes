@@ -1,5 +1,5 @@
 import { useState, useCallback, useLayoutEffect } from 'react';
-import debounce from './utils/debounce'; // maybe use a hook instead?
+import debounce from '../utils/debounce'; // maybe use a hook instead?
 
 function useDimensions({ liveMeasure: liveMeasure = true, delay: delay = 250 }) {
   const [dimensions, setDimensions] = useState({});

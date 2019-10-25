@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import isClient from "./utils/isClient";
+import isClient from "../utils/isClient";
 
 function useWindowSize(initialWidth, initialHeight) {
   const [windowSize, setWindowSize] = useState({

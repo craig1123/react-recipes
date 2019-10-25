@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import isClient from './utils/isClient';
+import isClient from '../utils/isClient';
 
 const useWindowScroll = () => {
   const [state, setState] = useState({
