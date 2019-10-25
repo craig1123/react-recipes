@@ -35,3 +35,17 @@ function useDimensions({ liveMeasure: liveMeasure = true, timer: timer = 250 }) 
 }
 
 export default useDimensions;
+
+
+// Usage
+
+// function App() {
+//   const [wrapperRef, dimensions] = useDimension();
+
+//   return (
+//     <div ref={wrapperRef}>
+//       height: {dimensions.height}
+//       width: {dimensions.width}
+//     </div>
+//   );
+// }
