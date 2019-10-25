@@ -1,7 +1,7 @@
 import { useState, useCallback, useLayoutEffect } from 'react';
-import debounce from './utils/debounce';
+import debounce from './utils/debounce'; // maybe use a hook instead?
 
-function useDimensions({ liveMeasure: liveMeasure = true, timer: timer = 250 }) {
+function useDimensions({ liveMeasure: liveMeasure = true, delay: delay = 250 }) {
   const [dimensions, setDimensions] = useState({});
   const [node, setNode] = useState(null);
 
@@ -16,7 +16,7 @@ function useDimensions({ liveMeasure: liveMeasure = true, timer: timer = 250 }) 
           const newDimensions = node.getBoundingClientRect();
           setDimensions(newDimensions);
         });
-      }, timer);
+      }, delay);
       measure();
 
       if (liveMeasure) {
