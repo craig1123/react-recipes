@@ -1,4 +1,5 @@
-  .DS_Store
+.DS_Store
 *.log*
-node_modules
 *.code-workspace
+node_modules
+dist

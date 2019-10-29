@@ -1,10 +1,10 @@
 {
   "name": "lohook",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React Hooks utility library containing popular customized hooks",
   "author": "@craig1123",
   "sideEffects": false,
-  "main": "index.js",
+  "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.m.js",
   "source": "src/index.js",
@@ -24,7 +24,7 @@
     "lint": "eslint src",
     "test": "jest --verbose --coverage --silent",
     "test:watch": "jest --watch --runInBand --silent",
-    "prebuild": "npm run lint && npm t && rimraf dist",
+    "prebuild": "rimraf dist",
     "build": "microbundle -o dist/ --sourcemap false --target web",
     "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
   },
@@ -68,5 +68,6 @@
         "statements": 0
       }
     }
-  }
+  },
+  "dependencies": {}
 }
