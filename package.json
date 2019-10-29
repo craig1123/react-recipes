@@ -1,6 +1,6 @@
 {
-  "name": "lohook",
-  "version": "0.0.2",
+  "name": "react-recipes",
+  "version": "0.0.1",
   "description": "A React Hooks utility library containing popular customized hooks",
   "author": "@craig1123",
   "sideEffects": false,
@@ -11,10 +11,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/craig1123/lohook.git"
+    "url": "https://github.com/craig1123/react-recipes.git"
   },
   "bugs": {
-    "url": "https://github.com/craig1123/lohook/issues"
+    "url": "https://github.com/craig1123/react-recipes/issues"
   },
   "publishConfig": {
     "tag": "latest"
@@ -32,12 +32,11 @@
     "react-hooks",
     "hooks",
     "react",
-    "utils",
+    "utility",
     "util",
-    "lodash",
     "use",
     "customize",
-    "lohooks"
+    "recipes"
   ],
   "devDependencies": {
     "@babel/core": "^7.2.2",
