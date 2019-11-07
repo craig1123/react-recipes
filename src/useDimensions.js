@@ -39,7 +39,7 @@ export default useDimensions;
 // Usage
 
 // function App() {
-//   const [wrapperRef, dimensions] = useDimension();
+//   const [wrapperRef, dimensions] = useDimensions();
 
 //   return (
 //     <div ref={wrapperRef}>
