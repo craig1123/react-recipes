@@ -15,10 +15,10 @@ yarn add react-recipes
 
 ## Recipes
 
-| Name                                    | Returns                 |
-| --------------------------------------- | ----------------------- |
-| [`useCopyClipboard`](#usecopyclipboard) | [isCopied, setIsCopied] |
-|                                         |
+| Name                                     | Returns                 |
+| ---------------------------------------- | ----------------------- |
+| [`useCopyClipboard`](#usecopyclipboardf) | [isCopied, setIsCopied] |
+|                                          |
 
 ## Documentation
 

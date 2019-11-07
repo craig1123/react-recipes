@@ -1,13 +1,13 @@
 {
   "name": "react-recipes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A React Hooks utility library containing popular customized hooks",
   "author": "@craig1123",
   "sideEffects": false,
   "main": "dist/react-recipes.js",
   "umd:main": "dist/react-recipes.umd.js",
   "module": "dist/react-recipes.m.js",
-  "source": "src/react-recipes.js",
+  "source": "src/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
