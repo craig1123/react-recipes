@@ -1,8 +1,8 @@
 /* eslint-disable consistent-return */
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function copyToClipboard() {
-  const el = document.createElement('textarea');
+  const el = document.createElement("textarea");
   const iOS = window.navigator.userAgent.match(/ipad|iphone/i);
   el.contentEditable = true; // needed for iOS >= 10
   el.readOnly = false; // needed for iOS >= 10
@@ -16,15 +16,16 @@ function copyToClipboard() {
     selection.removeAllRanges();
     selection.addRange(range);
     el.setSelectionRange(0, 999999);
+    // TODO: set vertical scroll
   } else {
     el.select();
   }
 
-  const successful = document.execCommand('copy');
+  const successful = document.execCommand("copy");
   document.body.removeChild(el);
 
   return successful;
-};
+}
 
 function useCopyClipboard(successDuration = 2000) {
   const [isCopied, setIsCopied] = useState(false);
@@ -44,7 +45,7 @@ function useCopyClipboard(successDuration = 2000) {
     text => {
       const didCopy = copyToClipboard(text);
       setIsCopied(didCopy);
-    },
+    }
   ];
 }
 
@@ -62,7 +63,6 @@ export default useCopyClipboard;
 
 // You can't cross the sea by merely standing
 // and staring at the water
-
 
 // Usage
 

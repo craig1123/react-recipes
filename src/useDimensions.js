@@ -1,7 +1,7 @@
-import { useState, useCallback, useLayoutEffect } from 'react';
-import debounce from '../utils/debounce'; // maybe use a hook instead?
+import { useState, useCallback, useLayoutEffect } from "react";
+import debounce from "../utils/debounce"; // maybe use a hook instead?
 
-function useDimensions({ liveMeasure: liveMeasure = true, delay: delay = 250 }) {
+function useDimensions(liveMeasure = true, delay = 250) {
   const [dimensions, setDimensions] = useState({});
   const [node, setNode] = useState(null);
 
@@ -20,12 +20,12 @@ function useDimensions({ liveMeasure: liveMeasure = true, delay: delay = 250 }) 
       measure();
 
       if (liveMeasure) {
-        window.addEventListener('resize', measure);
-        window.addEventListener('scroll', measure);
+        window.addEventListener("resize", measure);
+        window.addEventListener("scroll", measure);
 
         return () => {
-          window.removeEventListener('resize', measure);
-          window.removeEventListener('scroll', measure);
+          window.removeEventListener("resize", measure);
+          window.removeEventListener("scroll", measure);
         };
       }
     }
@@ -35,7 +35,6 @@ function useDimensions({ liveMeasure: liveMeasure = true, delay: delay = 250 }) 
 }
 
 export default useDimensions;
-
 
 // Usage
 
