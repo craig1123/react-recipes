@@ -22,17 +22,20 @@ yarn add react-recipes
 
 ## Recipes
 
-| Name                                     | Returns                        |
-| ---------------------------------------- | ------------------------------ |
-| [`useCopyClipboard`](#usecopyclipboardf) | [isCopied, setIsCopied]        |
-| [`useDarkMode`](#useDarkModef)           | [enabled, setEnabledState]     |
-| [`useDebounce`](#useDebouncef)           | [debouncedValue]               |
-| [`useDimensions`](#useDimensionsf)       | [ref, dimensions, node]        |
-| [`useEventListener`](#useEventListenerf) | -                              |
-| [`useHover`](#useHoverf)                 | [callbackRef, value]           |
-| [`useInterval`](#useIntervalf)           | [delay, ...effectDependencies] |
-| [`useKeyPress`](#useKeyPressf)           | [keyPressed]                   |
-|                                          |
+| Name                                       | Returns                        | Arguments                                                   |
+| ------------------------------------------ | ------------------------------ | ----------------------------------------------------------- |
+| [`useCopyClipboard`](#usecopyclipboardf)   | [isCopied, setIsCopied]        | (duration: 2000)                                            |
+| [`useDarkMode`](#useDarkModef)             | [enabled, setEnabledState]     | -                                                           |
+| [`useDebounce`](#useDebouncef)             | [debouncedValue]               | (value, delay)                                              |
+| [`useDimensions`](#useDimensionsf)         | [ref, dimensions, node]        | (liveMeasure: true, delay: 250)                             |
+| [`useEventListener`](#useEventListenerf)   | -                              | (eventName, handle, element: window)                        |
+| [`useHover`](#useHoverf)                   | [callbackRef, value]           | -                                                           |
+| [`useInterval`](#useIntervalf)             | [delay, ...effectDependencies] | (callback, delay, runOnLoad: false, effectDependencies: []) |
+| [`useKeyPress`](#useKeyPressf)             | [keyPressed]                   | (targetKey)                                                 |
+| [`useLocalStorage`](#useLocalStoragef)     | [storedValue, setValue]        | (key, initialValue)                                         |
+| [`useLockBodyScroll`](#useLockBodyScrollf) |                                |                                                             |
+| [`useMedia`](#useMedia)                    | [value]                        | (queries, values, defaultValue)                             |
+|                                            |                                |                                                             |
 
 ## Documentation
 
@@ -263,11 +266,11 @@ const App = () => {
 
 ### `useKeyPress(f)`
 
-Gives the dimensions of any element
+Adds keydown/keyup listeners to any key
 
 #### Arguments
 
-- `targetKey: string`: A key on the keyboard. Required
+- `targetKey: String`: A key on the keyboard. Required
 
 #### Returns
 
@@ -285,3 +288,122 @@ function App() {
     </div>
   );
 }
+```
+
+
+### `useLocalStorage(f)`
+
+Store and set values into localStorage
+
+#### Arguments
+
+- `key: String`: A unique key to be stored in localStorage
+- `initialValue: String`: Value to be used the first time for localStorage
+
+#### Returns
+
+- `storedValue: String`: Value in localStorage
+- `setValue: Function`: Set a new value to localStorage
+
+```js
+import { useLocalStorage } from "react-recipes";
+
+function App() {
+  // Similar to useState but first arg is key to the value in local storage.
+  const [name, setName] = useLocalStorage('name', 'Bob');
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+    </div>
+  );
+}
+```
+
+
+### `useLockBodyScroll(f)`
+
+Locks the scrolling - used for things like modals
+
+```js
+import { useLockBodyScroll } from "react-recipes";
+
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return isOpen && (
+    <Modal title="The title" onClose={() => setIsOpen(false)}>
+      Great modal content!
+    </Modal>
+  );
+}
+
+function Modal({ title, children, onClose }){
+  // Call hook to lock body scroll
+  useLockBodyScroll();
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal">
+        <h2>{title}</h2>
+        <p>{children}</p>
+      </div>
+    </div>
+  );
+}
+```
+
+
+### `useMedia(f)`
+
+Media Queries for Javascript
+
+#### Arguments
+
+- `queries: Array`: List of Media Query strings
+- `values: Array`: List of values tha correlates to the query list
+- `defaultValue: Any`: default value of media query
+
+#### Returns
+
+- `value: Any`:
+
+```js
+import { useMedia } from "react-recipes";
+
+function App() {
+  // See if user has set a browser or OS preference for dark mode.
+  const prefersDarkMode = useMedia(
+    ["(prefers-color-scheme: dark)"],
+    [true],
+    false
+  );
+  const columnCount = useMedia(
+    // Media queries
+    ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
+    // Column counts (relates to above media queries by array index)
+    [5, 4, 3],
+    // Default column count
+    2
+  );
+
+  let columnHeights = new Array(columnCount).fill(0);
+  let columns = new Array(columnCount).fill().map(() => []);
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+    </div>
+  );
+}
+```
