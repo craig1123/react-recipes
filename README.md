@@ -1,5 +1,10 @@
 <p align="center" style="color: #343a40">
-  <img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman-cook.png" alt="react-recipes-logo" height="150" width="150">
+  <img
+    src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman-cook.png" 
+    alt="react-recipes-logo" 
+    height="150" 
+    width="150"
+    >
   <h1 align="center">React Recipes</h1>
 </p>
 <p align="center" style="font-size: 1.2rem;">A React Hooks utility library containing popular customized hooks</p>
@@ -17,12 +22,16 @@ yarn add react-recipes
 
 ## Recipes
 
-| Name                                     | Returns                    |
-| ---------------------------------------- | -------------------------- |
-| [`useCopyClipboard`](#usecopyclipboardf) | [isCopied, setIsCopied]    |
-| [`useDarkMode`](#useDarkModef)           | [enabled, setEnabledState] |
-| [`useDebounce`](#useDebouncef)           | [debouncedValue]           |
-| [`useDimensions`](#useDimensionsf)       | [ref, dimensions, node]    |
+| Name                                     | Returns                        |
+| ---------------------------------------- | ------------------------------ |
+| [`useCopyClipboard`](#usecopyclipboardf) | [isCopied, setIsCopied]        |
+| [`useDarkMode`](#useDarkModef)           | [enabled, setEnabledState]     |
+| [`useDebounce`](#useDebouncef)           | [debouncedValue]               |
+| [`useDimensions`](#useDimensionsf)       | [ref, dimensions, node]        |
+| [`useEventListener`](#useEventListenerf) | -                              |
+| [`useHover`](#useHoverf)                 | [callbackRef, value]           |
+| [`useInterval`](#useIntervalf)           | [delay, ...effectDependencies] |
+| [`useKeyPress`](#useKeyPressf)           | [keyPressed]                   |
 |                                          |
 
 ## Documentation
@@ -37,7 +46,7 @@ Copies any string to the clipboard
 
 #### Returns
 
-- `isCopied: Boolean`: true when string was copied for the length of the duration.
+- `isCopied: Bool`: true when string was copied for the length of the duration.
 - `setIsCopied: Function`: Copies the string to the clipboard
 
 ```js
@@ -64,7 +73,7 @@ Toggles (and saves to localStorage) dark mode
 
 #### Returns
 
-- `darkMode: Boolean`: true when dark.
+- `darkMode: Bool`: true when dark.
 - `setDarkMode: Function`: Toggles darkMode
 
 ```js
@@ -134,12 +143,12 @@ Gives the dimensions of any element
 
 #### Arguments
 
-- `liveMeasure?: Boolean`: Adds scroll and resize events to always have the latest dimensions, default is `true`.
-- `delay?: Boolean`: delay for debounce calculation, default is `250`.
+- `liveMeasure?: Bool`: Adds scroll and resize events to always have the latest dimensions, default is `true`.
+- `delay?: Number`: delay for debounce calculation, default is `250`.
 
 #### Returns
 
-- `ref: Node`: Give this ref to the element needing the calculation
+- `ref: Ref`: Give this ref to the element needing the calculation
 - `dimensions: Object`: All of the element's dimensions
 - `node: Node`: The Element
 
@@ -157,3 +166,122 @@ function App() {
   );
 }
 ```
+
+
+### `useEventListener(f)`
+
+Adds an event listener
+
+#### Arguments
+
+- `eventName: String`: Name of event. Required.
+- `handler: Function`: Callback function. Required.
+- `element?: Element`: Element to attach the eventListener, default is `window`.
+
+```js
+import { useEventListener } from "react-recipes";
+
+function App(){
+  // State for storing mouse coordinates
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+
+  // Event handler utilizing useCallback ...
+  // ... so that reference never changes.
+  const handler = useCallback(
+    ({ clientX, clientY }) => {
+      // Update coordinates
+      setCoords({ x: clientX, y: clientY });
+    },
+    [setCoords]
+  );
+
+  // Add event listener using our hook
+  useEventListener('mousemove', handler);
+
+  return (
+    <h1>
+      The mouse position is ({coords.x}, {coords.y})
+    </h1>
+  );
+}
+```
+
+
+### `useHover(f)`
+
+Know when the mouse if hovering over an element
+
+#### Returns
+
+- `hoverRef: Ref`: add this to the desired hover element
+- `isHovered: Bool`: Whether or not the mouse is currently hovering over element
+
+```js
+import { useHover } from "react-recipes";
+
+function App() {
+  const [hoverRef, isHovered] = useHover();
+
+  return (
+    <div ref={hoverRef}>
+      {isHovered ? '😁' : '☹️'}
+    </div>
+  );
+}
+```
+
+### `useInterval(f)`
+
+Makes `setInterval` way easier
+
+#### Arguments
+
+- `callback: Function`: Callback after each interval
+- `delay: Number`: delay time between each callback invocation
+- `runOnLoad?: Bool`: Whether or not to run interval on mount, default is false.
+- `effectDependencies?: Array`: List of effects to re-call callback, default is `[]`.
+
+#### Returns
+
+- `isCopied: Bool`: true when string was copied for the length of the duration.
+- `setIsCopied: Function`: Copies the string to the clipboard
+
+```js
+import { useInterval } from "react-recipes";
+
+const App = () => {
+  // Grabs user data every 7500ms or when user changes
+  useInterval(() => {
+    if (user) {
+      getUserInfo(user);
+    }
+  }, 7500, true, [user]);
+
+  ...
+};
+```
+
+### `useKeyPress(f)`
+
+Gives the dimensions of any element
+
+#### Arguments
+
+- `targetKey: string`: A key on the keyboard. Required
+
+#### Returns
+
+- `keyPressed: Bool`: true on keydown are the targetKey.
+
+```js
+import { useKeyPress } from "react-recipes";
+
+function App() {
+  const [keyPressed] = useKeyPress('h');
+
+  return (
+    <div>
+      "h" key pressed: {keyPressed}
+    </div>
+  );
+}

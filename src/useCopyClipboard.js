@@ -7,6 +7,14 @@ function copyToClipboard() {
   el.contentEditable = true; // needed for iOS >= 10
   el.readOnly = false; // needed for iOS >= 10
   el.value = str;
+  el.style.border = '0';
+  el.style.padding = '0';
+  el.style.margin = '0';
+  el.style.position = 'absolute';
+  // sets vertical scroll
+  const yPosition = window.pageYOffset || document.documentElement.scrollTop;
+  el.style.top = `${yPosition}px`;
+
   document.body.appendChild(el);
 
   if (iOS) {
@@ -16,7 +24,6 @@ function copyToClipboard() {
     selection.removeAllRanges();
     selection.addRange(range);
     el.setSelectionRange(0, 999999);
-    // TODO: set vertical scroll
   } else {
     el.select();
   }
