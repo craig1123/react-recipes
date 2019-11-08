@@ -497,7 +497,7 @@ function App() {
 ```
 
 
-### `usePrevious`
+### `usePrevious(f)`
 
 Returns the previously set value
 
@@ -528,7 +528,7 @@ function App() {
 ```
 
 
-### `useScript`
+### `useScript(f)`
 
 Creates a script tag and loads the script
 
@@ -565,7 +565,7 @@ function App() {
 ```
 
 
-### `useWhyDidYouUpdate`
+### `useWhyDidYouUpdate(f)`
 
 Console logs the reason for why a component updated
 
@@ -586,7 +586,7 @@ const Counter = React.memo(props => {
 });
 ```
 
-### `useWindowScroll`
+### `useWindowScroll(f)`
 
 Re-renders on window scroll.
 
@@ -611,7 +611,7 @@ const App = () => {
 ```
 
 
-### `useWindowSize`
+### `useWindowSize(f)`
 
 Gets the window size and listens for resizes
 
