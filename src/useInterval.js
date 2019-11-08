@@ -32,3 +32,17 @@ function useInterval(callback, delay, runOnLoad = false, effectDependencies = []
 
 
 export default useInterval;
+
+
+// Usage
+
+// const App = () => {
+//   // Grabs user data every 7500ms or when user changes
+//   useInterval(() => {
+//     if (user) {
+//       getUserInfo(user);
+//     }
+//   }, 7500, true, [user]);
+
+//   ...
+// };

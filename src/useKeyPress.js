@@ -33,3 +33,11 @@ function useKeyPress(targetKey) {
 }
 
 export default useKeyPress;
+
+// Usage
+
+// function App() {
+//   const happyPress = useKeyPress("h");
+
+//   return <div>{happyPress && "😊"}</div>;
+// }

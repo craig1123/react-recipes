@@ -29,3 +29,16 @@ const useWindowScroll = () => {
 };
 
 export default useWindowScroll;
+
+// Usage
+
+// const App = () => {
+//   const { x, y } = useWindowScroll();
+
+//   return (
+//     <div>
+//       <div>x: {x}</div>
+//       <div>y: {y}</div>
+//     </div>
+//   );
+// };

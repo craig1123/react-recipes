@@ -5,6 +5,10 @@
   "author": "@craig1123",
   "sideEffects": false,
   "main": "dist/react-recipes.js",
+  "umd:main": "dist/react-recipes.umd.js",
+  "module": "dist/react-recipes.m.js",
+  "unpkg": "dist/react-recipes.umd.js",
+  "source": "src/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -52,7 +56,8 @@
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "jest": {
     "coverageThreshold": {

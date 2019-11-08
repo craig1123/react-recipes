@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-function useOnClickOutside(ref, handler) {
+function useOnClickOutside(ref, callback) {
   useEffect(
     () => {
       const listener = event => {
@@ -9,7 +9,7 @@ function useOnClickOutside(ref, handler) {
           return;
         }
 
-        handler(event);
+        callback(event);
       };
 
       document.addEventListener('mousedown', listener);
@@ -20,13 +20,13 @@ function useOnClickOutside(ref, handler) {
         document.removeEventListener('touchstart', listener);
       };
     },
-    // Add ref and handler to effect dependencies
-    // It's worth noting that because passed in handler is a new ...
+    // Add ref and callback to effect dependencies
+    // It's worth noting that because passed in callback is a new ...
     // ... function on every render that will cause this effect ...
     // ... callback/cleanup to run every render. It's not a big deal ...
-    // ... but to optimize you can wrap handler in useCallback before ...
+    // ... but to optimize you can wrap callback in useCallback before ...
     // ... passing it into this hook.
-    [ref, handler]
+    [ref, callback]
   );
 }
 

@@ -25,3 +25,33 @@ function useDebounce(value, delay) {
 }
 
 export default useDebounce;
+
+
+// Usage
+ 
+// const App = () => {
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [results, setResults] = useState([]);
+//   const [isSearching, setIsSearching] = useState(false);
+//   // Debounce search term so that it only gives us latest value ...
+//   // ... if searchTerm has not been updated within last 500ms.
+//   const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+//   // Effect for API call
+//   useEffect(
+//     () => {
+//       if (debouncedSearchTerm) {
+//         setIsSearching(true);
+//         searchCharacters(debouncedSearchTerm).then(results => {
+//           setIsSearching(false);
+//           setResults(results);
+//         });
+//       } else {
+//         setResults([]);
+//       }
+//     },
+//     [debouncedSearchTerm]
+//   );
+
+//   ...
+// };

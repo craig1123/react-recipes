@@ -20,24 +20,28 @@ npm i react-recipes --save
 yarn add react-recipes
 ```
 
-## Recipes
+## 🥘 Recipes
 
-| Name                                       | Returns                                               | Arguments                                                                               |
-| ------------------------------------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [`useCopyClipboard`](#usecopyclipboardf)   | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
-| [`useDarkMode`](#useDarkModef)             | [enabled, setEnabledState]                            | -                                                                                       |
-| [`useDebounce`](#useDebouncef)             | [debouncedValue]                                      | (value, delay)                                                                          |
-| [`useDimensions`](#useDimensionsf)         | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250)                                                         |
-| [`useEventListener`](#useEventListenerf)   | -                                                     | (eventName, handle, element: window)                                                    |
-| [`useGeolocation`](#useGeolocationf)       | [{ latitude, longitude, timestamp, accuracy, error }] | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
-| [`useHover`](#useHoverf)                   | [callbackRef, value]                                  | -                                                                                       |
-| [`useInterval`](#useIntervalf)             | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
-| [`useKeyPress`](#useKeyPressf)             | [keyPressed]                                          | (targetKey)                                                                             |
-| [`useLocalStorage`](#useLocalStoragef)     | [storedValue, setValue]                               | (key, initialValue)                                                                     |
-| [`useLockBodyScroll`](#useLockBodyScrollf) |                                                       |                                                                                         |
-| [`useMedia`](#useMediaf)                   | [value]                                               | (queries, values, defaultValue)                                                         |
-| [`useMultiKeyPress`](#useMultiKeyPressf)   | [keysPressed]                                         | (targetKey)                                                                             |
-|                                            |                                                       |                                                                                         |
+| Name                                         | Returns                                               | Arguments                                                                               |
+| -------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`useCopyClipboard`](#usecopyclipboardf)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
+| [`useDarkMode`](#useDarkModef)               | [enabled, setEnabledState]                            | -                                                                                       |
+| [`useDebounce`](#useDebouncef)               | debouncedValue                                        | (value, delay)                                                                          |
+| [`useDimensions`](#useDimensionsf)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250)                                                         |
+| [`useEventListener`](#useEventListenerf)     | -                                                     | (eventName, handle, element: window)                                                    |
+| [`useGeolocation`](#useGeolocationf)         | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
+| [`useHover`](#useHoverf)                     | [callbackRef, value]                                  | -                                                                                       |
+| [`useInterval`](#useIntervalf)               | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
+| [`useKeyPress`](#useKeyPressf)               | keyPressed                                            | (targetKey)                                                                             |
+| [`useLocalStorage`](#useLocalStoragef)       | [storedValue, setValue]                               | (key, initialValue)                                                                     |
+| [`useLockBodyScroll`](#useLockBodyScrollf)   | -                                                     | -                                                                                       |
+| [`useMedia`](#useMediaf)                     | value                                                 | (queries, values, defaultValue)                                                         |
+| [`useMultiKeyPress`](#useMultiKeyPressf)     | keysPressed                                           | (targetKey)                                                                             | 
+| [`usePrevious`](#usePreviousf)               | previous                                              | (value)                                                                                 |
+| [`useScript`](#useScriptf)                   | [loaded, error]                                       | (src)                                                                                   |
+| [`useWhyDidYouUpdate`](#useWhyDidYouUpdatef) | -                                                     | (name, props)                                                                           |
+| [`useWindowScroll`](#useWindowScrollf)       | { x, y }                                              | -                                                                                       |
+| [`useWindowSize`](#useWindowSizef)           | { height, width }                                     | (initialWidth, initialHeight)                                                           |
 
 ## Documentation
 
@@ -455,5 +459,181 @@ function App() {
   const keysPressed = useMultiKeyPress();
 
   return <div>{[...keysPressed].map(key => `${key} key pressed`)}</div>;
+}
+```
+
+### `useOnClickOutside(f)`
+
+Event listener for clicking outside of an element
+
+#### Arguments
+
+- `ref: Ref`: Click outside of this element
+- `callback: Function`: Called on click outside
+
+```js
+import { useOnClickOutside } from "react-recipes";
+
+function App() {
+  // Create a ref that we add to the element for which we want to detect outside clicks
+  const ref = useRef();
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  // Call hook passing in the ref and a function to call on outside click
+  useOnClickOutside(ref, () => setModalOpen(false));
+
+  return (
+    <div>
+      {isModalOpen ? (
+        <div ref={ref}>
+          👋 Hey, I'm a modal. Click anywhere outside of me to close.
+        </div>
+      ) : (
+        <button onClick={() => setModalOpen(true)}>Open Modal</button>
+      )}
+    </div>
+  );
+}
+```
+
+
+### `usePrevious`
+
+Returns the previously set value
+
+#### Arguments
+
+- `value: Any`: The current value (next value to save)
+
+#### Returns
+
+- `previous: Any`: The previous value
+
+```js
+import { usePrevious } from "react-recipes";
+
+function App() {
+  const [count, setCount] = useState(0);
+  
+  // Get the previous value (was passed into hook on last render)
+  const prevCount = usePrevious(count);
+  
+  return (
+    <div>
+      <h1>Now: {count}, before: {prevCount}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+   );
+}
+```
+
+
+### `useScript`
+
+Creates a script tag and loads the script
+
+#### Arguments
+
+- `src: String`: The source url to the script
+
+#### Returns
+
+- `loaded: Bool`: Did the script load?
+- `error: Bool`: Did the script error out?
+
+```js
+import { useScript } from "react-recipes";
+
+function App() {
+  const [loaded, error] = useScript(
+    'https://pm28k14qlj.codesandbox.io/test-external-script.js'
+  );
+
+  return (
+    <div>
+      <div>
+        Script loaded: <b>{loaded.toString()}</b>
+      </div>
+      {loaded && !error && (
+        <div>
+          Script function call response: <b>{TEST_SCRIPT.start()}</b>
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+
+### `useWhyDidYouUpdate`
+
+Console logs the reason for why a component updated
+
+#### Arguments
+
+- `name: String`: Name this log
+- `props: Object`: Component props from parent
+
+```js
+import { useWhyDidYouUpdate } from "react-recipes";
+
+// Let's pretend this <Counter> component is expensive to re-render so ...
+// ... we wrap with React.memo, but we're still seeing performance issues :/
+// So we add useWhyDidYouUpdate and check our console to see what's going on.
+const Counter = React.memo(props => {
+  useWhyDidYouUpdate('Counter', props);
+  return <div style={props.style}>{props.count}</div>;
+});
+```
+
+### `useWindowScroll`
+
+Re-renders on window scroll.
+
+#### Returns
+- `state: Object`
+  - `x: Number`: Horizontal location
+  - `y: Number`: Vertical location
+
+```js
+import { useWindowScroll } from "react-recipes";
+
+const App = () => {
+  const { x, y } = useWindowScroll();
+
+  return (
+    <div>
+      <div>x: {x}</div>
+      <div>y: {y}</div>
+    </div>
+  );
+};
+```
+
+
+### `useWindowSize`
+
+Gets the window size and listens for resizes
+
+#### Arguments
+
+- `src: String`: The source url to the script
+
+#### Returns
+
+- `loaded: Bool`: Did the script load?
+- `error: Bool`: Did the script error out?
+
+```js
+import { useWindowSize } from "react-recipes";
+
+function App() {
+  const { width, height } = useWindowSize();
+
+  return (
+    <div>
+      {width}px / {height}px
+    </div>
+  );
 }
 ```

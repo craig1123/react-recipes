@@ -26,3 +26,11 @@ function useMultiKeyPress() {
 
 
 export default useMultiKeyPress;
+
+// Usage
+
+// function App() {
+//   const keysPressed = useMultiKeyPress();
+
+//   return <div>{[...keysPressed].map(key => `${key} key pressed`)}</div>;
+// }
