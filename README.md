@@ -49,10 +49,6 @@ yarn add react-recipes
 
 Copies any string to the clipboard
 
-#### Arguments
-
-- `duration?: Number`: Duration of "on/success" state, default is `2000`.
-
 #### Returns
 
 - `isCopied: Bool`: true when string was copied for the length of the duration.
