@@ -22,20 +22,22 @@ yarn add react-recipes
 
 ## Recipes
 
-| Name                                       | Returns                        | Arguments                                                   |
-| ------------------------------------------ | ------------------------------ | ----------------------------------------------------------- |
-| [`useCopyClipboard`](#usecopyclipboardf)   | [isCopied, setIsCopied]        | (duration: 2000)                                            |
-| [`useDarkMode`](#useDarkModef)             | [enabled, setEnabledState]     | -                                                           |
-| [`useDebounce`](#useDebouncef)             | [debouncedValue]               | (value, delay)                                              |
-| [`useDimensions`](#useDimensionsf)         | [ref, dimensions, node]        | (liveMeasure: true, delay: 250)                             |
-| [`useEventListener`](#useEventListenerf)   | -                              | (eventName, handle, element: window)                        |
-| [`useHover`](#useHoverf)                   | [callbackRef, value]           | -                                                           |
-| [`useInterval`](#useIntervalf)             | [delay, ...effectDependencies] | (callback, delay, runOnLoad: false, effectDependencies: []) |
-| [`useKeyPress`](#useKeyPressf)             | [keyPressed]                   | (targetKey)                                                 |
-| [`useLocalStorage`](#useLocalStoragef)     | [storedValue, setValue]        | (key, initialValue)                                         |
-| [`useLockBodyScroll`](#useLockBodyScrollf) |                                |                                                             |
-| [`useMedia`](#useMedia)                    | [value]                        | (queries, values, defaultValue)                             |
-|                                            |                                |                                                             |
+| Name                                       | Returns                                               | Arguments                                                                               |
+| ------------------------------------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`useCopyClipboard`](#usecopyclipboardf)   | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
+| [`useDarkMode`](#useDarkModef)             | [enabled, setEnabledState]                            | -                                                                                       |
+| [`useDebounce`](#useDebouncef)             | [debouncedValue]                                      | (value, delay)                                                                          |
+| [`useDimensions`](#useDimensionsf)         | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250)                                                         |
+| [`useEventListener`](#useEventListenerf)   | -                                                     | (eventName, handle, element: window)                                                    |
+| [`useGeolocation`](#useGeolocationf)       | [{ latitude, longitude, timestamp, accuracy, error }] | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
+| [`useHover`](#useHoverf)                   | [callbackRef, value]                                  | -                                                                                       |
+| [`useInterval`](#useIntervalf)             | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
+| [`useKeyPress`](#useKeyPressf)             | [keyPressed]                                          | (targetKey)                                                                             |
+| [`useLocalStorage`](#useLocalStoragef)     | [storedValue, setValue]                               | (key, initialValue)                                                                     |
+| [`useLockBodyScroll`](#useLockBodyScrollf) |                                                       |                                                                                         |
+| [`useMedia`](#useMediaf)                   | [value]                                               | (queries, values, defaultValue)                                                         |
+| [`useMultiKeyPress`](#useMultiKeyPressf)   | [keysPressed]                                         | (targetKey)                                                                             |
+|                                            |                                                       |                                                                                         |
 
 ## Documentation
 
@@ -170,7 +172,6 @@ function App() {
 }
 ```
 
-
 ### `useEventListener(f)`
 
 Adds an event listener
@@ -184,7 +185,7 @@ Adds an event listener
 ```js
 import { useEventListener } from "react-recipes";
 
-function App(){
+function App() {
   // State for storing mouse coordinates
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
@@ -199,7 +200,7 @@ function App(){
   );
 
   // Add event listener using our hook
-  useEventListener('mousemove', handler);
+  useEventListener("mousemove", handler);
 
   return (
     <h1>
@@ -209,6 +210,46 @@ function App(){
 }
 ```
 
+### `useGeolocation(f)`
+
+Gets and watches for the geolocation of the user
+
+#### Arguments
+
+- `watch?: Bool`: set it to true to follow the location. Default is `false`
+- `settings: Object`: position options
+  - settings.enableHighAccuracy: indicates the application would like to receive the most accurate results (default false),
+  - settings.timeout: maximum length of time (in milliseconds) the device is allowed to take in order to return a position (default Infinity),
+  - settings.maximumAge: the maximum age in milliseconds of a possible cached position that is acceptable to return (default 0).
+
+#### Returns
+
+- `position: Object`:
+  - latitude
+  - longitude
+  - timestamp: the time when their location was given
+  - accuracy: how accuate the geolocation is
+  - error: Any error with getting the geolocation
+
+```js
+import { useGeolocation } from "react-recipes";
+
+function App() {
+  const { latitude, longitude, timestamp, accuracy, error } = useGeolocation(
+    true
+  );
+
+  return (
+    <code>
+      latitude: {latitude}
+      longitude: {longitude}
+      timestamp: {timestamp}
+      accuracy: {accuracy && `${accuracy}m`}
+      error: {error}
+    </code>
+  );
+}
+```
 
 ### `useHover(f)`
 
@@ -225,11 +266,7 @@ import { useHover } from "react-recipes";
 function App() {
   const [hoverRef, isHovered] = useHover();
 
-  return (
-    <div ref={hoverRef}>
-      {isHovered ? '😁' : '☹️'}
-    </div>
-  );
+  return <div ref={hoverRef}>{isHovered ? "😁" : "☹️"}</div>;
 }
 ```
 
@@ -280,16 +317,11 @@ Adds keydown/keyup listeners to any key
 import { useKeyPress } from "react-recipes";
 
 function App() {
-  const [keyPressed] = useKeyPress('h');
+  const happyPress = useKeyPress("h");
 
-  return (
-    <div>
-      "h" key pressed: {keyPressed}
-    </div>
-  );
+  return <div>{happyPress && "😊"}</div>;
 }
 ```
-
 
 ### `useLocalStorage(f)`
 
@@ -310,7 +342,7 @@ import { useLocalStorage } from "react-recipes";
 
 function App() {
   // Similar to useState but first arg is key to the value in local storage.
-  const [name, setName] = useLocalStorage('name', 'Bob');
+  const [name, setName] = useLocalStorage("name", "Bob");
 
   return (
     <div>
@@ -325,7 +357,6 @@ function App() {
 }
 ```
 
-
 ### `useLockBodyScroll(f)`
 
 Locks the scrolling - used for things like modals
@@ -336,14 +367,16 @@ import { useLockBodyScroll } from "react-recipes";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-  return isOpen && (
-    <Modal title="The title" onClose={() => setIsOpen(false)}>
-      Great modal content!
-    </Modal>
+  return (
+    isOpen && (
+      <Modal title="The title" onClose={() => setIsOpen(false)}>
+        Great modal content!
+      </Modal>
+    )
   );
 }
 
-function Modal({ title, children, onClose }){
+function Modal({ title, children, onClose }) {
   // Call hook to lock body scroll
   useLockBodyScroll();
 
@@ -357,7 +390,6 @@ function Modal({ title, children, onClose }){
   );
 }
 ```
-
 
 ### `useMedia(f)`
 
@@ -385,7 +417,7 @@ function App() {
   );
   const columnCount = useMedia(
     // Media queries
-    ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
+    ["(min-width: 1500px)", "(min-width: 1000px)", "(min-width: 600px)"],
     // Column counts (relates to above media queries by array index)
     [5, 4, 3],
     // Default column count
@@ -405,5 +437,23 @@ function App() {
       />
     </div>
   );
+}
+```
+
+### `useMultiKeyPress(f)`
+
+Listens for mulitple keypresses at a time
+
+#### Returns
+
+- `keysPressed: Set`: A set a keys currently pressed
+
+```js
+import { useMultiKeyPress } from "react-recipes";
+
+function App() {
+  const keysPressed = useMultiKeyPress();
+
+  return <div>{[...keysPressed].map(key => `${key} key pressed`)}</div>;
 }
 ```

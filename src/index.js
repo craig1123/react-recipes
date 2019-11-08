@@ -3,6 +3,7 @@ import useDarkMode from "./useDarkMode";
 import useDebounce from "./useDebounce";
 import useDimensions from "./useDimensions";
 import useEventListener from "./useEventListener";
+import useGeolocation from "./useGeolocation";
 import useHover from "./useHover";
 import useInterval from "./useInterval";
 import useKeyPress from "./useKeyPress";
@@ -23,6 +24,7 @@ export {
   useDebounce,
   useDimensions,
   useEventListener,
+  useGeolocation,
   useHover,
   useInterval,
   useKeyPress,
@@ -35,5 +37,5 @@ export {
   useScript,
   useWhyDidYouUpdate,
   useWindowSize,
-  useWindowScroll,
-}
+  useWindowScroll
+};
