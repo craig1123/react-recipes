@@ -25,8 +25,6 @@ function useInterval(callback, delay, runOnLoad = false, effectDependencies = []
       const id = setInterval(tick, delay);
       return () => clearInterval(id);
     }
-    
-    return () => null;
   }, [delay, ...effectDependencies]);
 };
 
