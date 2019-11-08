@@ -24,7 +24,7 @@ yarn add react-recipes
 
 | Name                                         | Returns                                               | Arguments                                                                               |
 | -------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [`useCopyClipboard`](#usecopyclipboardf)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
+| [`useCopyClipboard`](#usecopyclipboardf)     | [isCopied, setIsCopied]                               | -                                                                                       |
 | [`useDarkMode`](#useDarkModef)               | [enabled, setEnabledState]                            | -                                                                                       |
 | [`useDebounce`](#useDebouncef)               | debouncedValue                                        | (value, delay)                                                                          |
 | [`useDimensions`](#useDimensionsf)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250)                                                         |
