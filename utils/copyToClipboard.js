@@ -30,3 +30,5 @@ function copyToClipboard() {
 
   return successful;
 }
+
+export default copyToClipboard;
