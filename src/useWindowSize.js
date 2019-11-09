@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import isClient from "../utils/isClient";
+import useEventListener from './useEventListener';
 
 function useWindowSize(initialWidth, initialHeight) {
   const [windowSize, setWindowSize] = useState({
@@ -7,22 +8,13 @@ function useWindowSize(initialWidth, initialHeight) {
     height: isClient ? window.innerHeight : initialHeight
   });
 
-  useEffect(() => {
-    if (!isClient) {
-      return undefined;
-    }
-    
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
+  useEventListener('resize',() => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  })
+  
   return windowSize;
 }
 
