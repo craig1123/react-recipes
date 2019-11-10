@@ -25,7 +25,7 @@
     "lint": "eslint src",
     "test": "jest --verbose --coverage --silent",
     "test:watch": "jest --watch --runInBand --silent",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist && npm test",
     "build": "microbundle -o dist/ --sourcemap false --target web",
     "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
   },
