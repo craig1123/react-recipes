@@ -11,6 +11,7 @@
 <p align="center" style="font-size: 1.2rem;">What's your favorite dish?</p>
 
 ![](https://img.shields.io/badge/license-MIT-green.svg)
+[![Build Status](https://travis-ci.com/craig1123/react-recipes.svg?branch=master)](https://travis-ci.com/craig1123/react-recipes)
 
 ```bash
 npm i react-recipes --save
