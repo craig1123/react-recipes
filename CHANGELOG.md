@@ -1,3 +1,8 @@
+## v0.0.5 (2019-11-11)
+
+#### :bug:
+- [#8](https://github.com/craig1123/react-recipes/pull/8) Module parse failed: export _ is not defined ([@craig1123](https://github.com/craig1123))
+
 ## v0.0.4 (2019-11-11)
 
 #### :bug:
