@@ -3,3 +3,4 @@
 *.code-workspace
 node_modules
 dist
+coverage
