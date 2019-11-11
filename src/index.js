@@ -1,41 +1,19 @@
-import useCopyClipboard from "./useCopyClipboard";
-import useDarkMode from "./useDarkMode";
-import useDebounce from "./useDebounce";
-import useDimensions from "./useDimensions";
-import useEventListener from "./useEventListener";
-import useGeolocation from "./useGeolocation";
-import useHover from "./useHover";
-import useInterval from "./useInterval";
-import useKeyPress from "./useKeyPress";
-import useLocalStorage from "./useLocalStorage";
-import useLockBodyScroll from "./useLockBodyScroll";
-import useMedia from "./useMedia";
-import useMultiKeyPress from "./useMultiKeyPress";
-import useOnClickOutside from "./useOnClickOutside";
-import usePrevious from "./usePrevious";
-import useScript from "./useScript";
-import useWhyDidYouUpdate from "./useWhyDidYouUpdate";
-import useWindowSize from "./useWindowSize";
-import useWindowScroll from "./useWindowScroll";
-
-export {
-  useCopyClipboard,
-  useDarkMode,
-  useDebounce,
-  useDimensions,
-  useEventListener,
-  useGeolocation,
-  useHover,
-  useInterval,
-  useKeyPress,
-  useLocalStorage,
-  useLockBodyScroll,
-  useMedia,
-  useMultiKeyPress,
-  useOnClickOutside,
-  usePrevious,
-  useScript,
-  useWhyDidYouUpdate,
-  useWindowSize,
-  useWindowScroll
-};
+export { default as useCopyClipboard } from "./useCopyClipboard";
+export { default as useDarkMode } from "./useDarkMode";
+export { default as useDebounce } from "./useDebounce";
+export { default as useDimensions } from "./useDimensions";
+export { default as useEventListener } from "./useEventListener";
+export { default as useGeolocation } from "./useGeolocation";
+export { default as useHover } from "./useHover";
+export { default as useInterval } from "./useInterval";
+export { default as useKeyPress } from "./useKeyPress";
+export { default as useLocalStorage } from "./useLocalStorage";
+export { default as useLockBodyScroll } from "./useLockBodyScroll";
+export { default as useMedia } from "./useMedia";
+export { default as useMultiKeyPress } from "./useMultiKeyPress";
+export { default as useOnClickOutside } from "./useOnClickOutside";
+export { default as usePrevious } from "./usePrevious";
+export { default as useScript } from "./useScript";
+export { default as useWhyDidYouUpdate } from "./useWhyDidYouUpdate";
+export { default as useWindowSize } from "./useWindowSize";
+export { default as useWindowScroll } from "./useWindowScroll";
