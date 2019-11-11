@@ -7,7 +7,7 @@ const defaultSettings = {
   maximumAge: 0
 };
 
-export const useGeolocation = (watch = false, settings = defaultSettings) => {
+const useGeolocation = (watch = false, settings = defaultSettings) => {
   const [position, setPosition] = useState({});
   const [error, setError] = useState(null);
 
@@ -43,6 +43,8 @@ export const useGeolocation = (watch = false, settings = defaultSettings) => {
 
   return { ...position, error };
 };
+
+export default useGeolocation;
 
 // Usage
 
