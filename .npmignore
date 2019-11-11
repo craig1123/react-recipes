@@ -1,1 +1,7 @@
 .prettierrc
+coverage
+src
+utils
+.babelrc
+__tests__
+.eslintrc.json
