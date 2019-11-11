@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+node_js:
+  - '10'
+  - '12'
+install:
+  - npm install
+  # https://reactjs.org/blog/2019/10/22/react-release-channels.html#using-the-next-channel-for-integration-testing
+  - if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then npm install react@next react-dom@next; fi
+script: 
+  - npm run test
+  - npm run build
+branches:
+  only: master
