@@ -1,3 +1,4 @@
+import { act } from 'react-test-renderer';
 import { renderHook } from '@testing-library/react-hooks';
 import useInterval from '../src/useInterval';
 
@@ -65,7 +66,9 @@ it('should clear interval on unmount', () => {
   const initialTimerCount = jest.getTimerCount();
   expect(clearInterval).not.toHaveBeenCalled();
 
-  unmount();
+  act(() => {
+    unmount();
+  });
 
   expect(clearInterval).toHaveBeenCalledTimes(1);
   expect(jest.getTimerCount()).toBe(initialTimerCount - 1);
