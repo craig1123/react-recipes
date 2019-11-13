@@ -1,3 +1,4 @@
+import { act } from 'react-test-renderer';
 import { renderHook } from '@testing-library/react-hooks';
 import useDebounce from '../src/useDebounce';
 
@@ -31,9 +32,15 @@ describe('useDebounce', () => {
     const hook = getHook('', 5);
 
     expect(hook.result.current).toBe('');
-    hook.unmount();
-    hook.rerender({ value: 'delayed' });
-    jest.advanceTimersByTime(5);
+    act(() => {
+      hook.unmount();
+    });
+    act(() => {
+      hook.rerender({ value: 'delayed' });
+    });
+    act(() => {
+      jest.advanceTimersByTime(5);
+    });
     expect(hook.result.current).toBe('');
   });
 
@@ -41,9 +48,13 @@ describe('useDebounce', () => {
     const hook = getHook('', 50);
 
     expect(hook.result.current).toBe('');
-    hook.rerender({ delay: 5, value: 'delayed' });
+    act(() => {
+      hook.rerender({ delay: 5, value: 'delayed' });
+    });
     expect(hook.result.current).toBe('');
-    jest.advanceTimersByTime(5);
+    act(() => {
+      jest.advanceTimersByTime(5);
+    });
     expect(hook.result.current).toBe('delayed');
   });
 
@@ -52,11 +63,16 @@ describe('useDebounce', () => {
 
     jest.advanceTimersByTime(45);
     expect(hook.result.current).toBe('test');
-    hook.rerender({ delay: 55, value: 'try again' });
-
-    jest.advanceTimersByTime(50);
+    act(() => {
+      hook.rerender({ delay: 55, value: 'try again' });
+    });
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
     expect(hook.result.current).toBe('test');
-    jest.advanceTimersByTime(5);
+    act(() => {
+      jest.advanceTimersByTime(5);
+    });
     expect(hook.result.current).toBe('try again');
   });
 });

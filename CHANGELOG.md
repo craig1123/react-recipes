@@ -1,3 +1,11 @@
+## v0.0.6 (2019-11-11)
+
+#### :bug:
+- [#12](https://github.com/craig1123/react-recipes/pull/12) useCopyToClipboard param not defined  ([@craig1123](https://github.com/craig1123))
+
+#### :feature:
+- [#12](https://github.com/craig1123/react-recipes/pull/12) Added another param to `useDimension`: `effectDeps` ([@craig1123](https://github.com/craig1123))
+
 ## v0.0.5 (2019-11-11)
 
 #### :bug:
