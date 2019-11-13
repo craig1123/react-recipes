@@ -50,6 +50,7 @@
     "eslint-config-amex": "^11.1.0",
     "jest": "^24.9.0",
     "microbundle": "^0.11.0",
+    "raf-stub": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-test-renderer": "^16.11.0",

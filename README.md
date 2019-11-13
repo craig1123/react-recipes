@@ -28,7 +28,7 @@ yarn add react-recipes
 | [`useCopyClipboard`](#usecopyclipboardf)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
 | [`useDarkMode`](#useDarkModef)               | [enabled, setEnabledState]                            | -                                                                                       |
 | [`useDebounce`](#useDebouncef)               | debouncedValue                                        | (value, delay)                                                                          |
-| [`useDimensions`](#useDimensionsf)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250, effectDependencies: [])                                 |
+| [`useDimensions`](#useDimensionsf)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250, initialDimensions: {}, effectDependencies: [])                                 |
 | [`useEventListener`](#useEventListenerf)     | -                                                     | (eventName, handle, element: window)                                                    |
 | [`useGeolocation`](#useGeolocationf)         | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
 | [`useHover`](#useHoverf)                     | [callbackRef, value]                                  | -                                                                                       |
@@ -155,6 +155,7 @@ Gives the dimensions of any element
 
 - `liveMeasure?: Bool`: Adds scroll and resize events to always have the latest dimensions, default is `true`.
 - `delay?: Number`: delay for debounce calculation, default is `250`.
+- `initialDimensions?: Object`: Default dimensions before the calculation. Default is `{}`.
 - `effectDependencies?: Array`: List of effects to re-call useLayoutEffect, default is `[]`.
 
 #### Returns
