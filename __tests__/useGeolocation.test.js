@@ -1,5 +1,5 @@
 import React from 'react';
-import useGeoLocation from '../src/useGeoLocation';
+import useGeoLocation from '../src/useGeolocation';
 import renderer, { act } from 'react-test-renderer';
 
 const Demo = ({watch, settings}) => {
