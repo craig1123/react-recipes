@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
 
-let cachedScripts = [];
+const cachedScripts = [];
 
 function useScript(src) {
   // Keeping track of script loaded and error state
   const [state, setState] = useState({
     loaded: false,
-    error: false
+    error: false,
   });
 
   useEffect(
@@ -17,13 +17,13 @@ function useScript(src) {
       if (cachedScripts.includes(src)) {
         setState({
           loaded: true,
-          error: false
+          error: false,
         });
       } else {
         cachedScripts.push(src);
 
         // Create script
-        let script = document.createElement('script');
+        const script = document.createElement('script');
         script.src = src;
         script.async = true;
 
@@ -31,7 +31,7 @@ function useScript(src) {
         const onScriptLoad = () => {
           setState({
             loaded: true,
-            error: false
+            error: false,
           });
         };
 
@@ -43,7 +43,7 @@ function useScript(src) {
 
           setState({
             loaded: true,
-            error: true
+            error: true,
           });
         };
 
@@ -60,7 +60,7 @@ function useScript(src) {
         };
       }
     },
-    [src] // Only re-run effect if script src changes
+    [src], // Only re-run effect if script src changes
   );
 
   return [state.loaded, state.error];

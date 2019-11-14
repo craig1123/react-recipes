@@ -1,10 +1,10 @@
 // referenced from https://github.com/trekhleb/use-position
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const defaultSettings = {
   enableHighAccuracy: false,
   timeout: Infinity,
-  maximumAge: 0
+  maximumAge: 0,
 };
 
 const useGeolocation = (watch = false, settings = defaultSettings) => {
@@ -16,18 +16,18 @@ const useGeolocation = (watch = false, settings = defaultSettings) => {
       latitude: coords.latitude,
       longitude: coords.longitude,
       accuracy: coords.accuracy,
-      timestamp
+      timestamp,
     });
   };
 
-  const onError = error => {
-    setError(error.message);
+  const onError = (err) => {
+    setError(err.message);
   };
 
   useEffect(() => {
     const geo = navigator.geolocation;
     if (!geo) {
-      setError("Geolocation is not supported");
+      setError('Geolocation is not supported');
       return;
     }
 
@@ -64,6 +64,9 @@ export default useGeolocation;
 
 // watch: boolean - set it to true to follow the location.
 // settings: object - position options
-//   * settings.enableHighAccuracy - indicates the application would like to receive the most accurate results (default false),
-//   * settings.timeout - maximum length of time (in milliseconds) the device is allowed to take in order to return a position (default Infinity),
-//   * settings.maximumAge - the maximum age in milliseconds of a possible cached position that is acceptable to return (default 0).
+//   * settings.enableHighAccuracy - indicates the application would like to...
+// ...receive the most accurate results (default false),
+//   * settings.timeout - maximum length of time (in milliseconds) the device...
+// ...is allowed to take in order to return a position (default Infinity),
+//   * settings.maximumAge - the maximum age in milliseconds of a possible ...
+// ... cached position that is acceptable to return (default 0).

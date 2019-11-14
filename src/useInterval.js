@@ -16,13 +16,13 @@ function useInterval(callback, delay, runOnLoad = false, effectDependencies = []
   }, [callback]);
 
   // Set up the interval.
-  useEffect(() => {    
+  useEffect(() => {
     if (delay !== null) {
       const id = setInterval(() => savedCallback.current(), delay);
       return () => clearInterval(id);
     }
   }, [delay, ...effectDependencies]);
-};
+}
 
 
 export default useInterval;

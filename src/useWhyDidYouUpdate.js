@@ -12,20 +12,20 @@ function useWhyDidYouUpdate(name, props) {
       // Use this object to keep track of changed props
       const changesObj = {};
       // Iterate through keys
-      allKeys.forEach(key => {
+      allKeys.forEach((key) => {
         // If previous is different from current
         if (previousProps.current[key] !== props[key]) {
           // Add to changesObj
           changesObj[key] = {
             from: previousProps.current[key],
-            to: props[key]
+            to: props[key],
           };
         }
       });
 
       // If changesObj not empty then output to console
       if (Object.keys(changesObj).length) {
-        console.log("[why-did-you-update]", name, changesObj);
+        console.log('[why-did-you-update]', name, changesObj);
       }
     }
 

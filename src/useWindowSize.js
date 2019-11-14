@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react';
-import isClient from "../utils/isClient";
+import { useState } from 'react';
+import isClient from '../utils/isClient';
 import useEventListener from './useEventListener';
 
 function useWindowSize(initialWidth, initialHeight) {
   const [windowSize, setWindowSize] = useState({
     width: isClient ? window.innerWidth : initialWidth,
-    height: isClient ? window.innerHeight : initialHeight
+    height: isClient ? window.innerHeight : initialHeight,
   });
 
-  useEventListener('resize',() => {
+  useEventListener('resize', () => {
     setWindowSize({
       width: window.innerWidth,
       height: window.innerHeight,
     });
-  })
-  
+  });
+
   return windowSize;
 }
 

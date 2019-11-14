@@ -7,7 +7,7 @@ function debounce(func, wait, immediate) {
     const context = this;
 
     // eslint-disable-next-line func-names
-    const later = function() {
+    const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
