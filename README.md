@@ -46,7 +46,7 @@ yarn add react-recipes
 
 ## Documentation
 
-### `useCopyClipboard(f)`
+### 🥠 `useCopyClipboard(f)`
 
 Copies any string to the clipboard
 
@@ -77,7 +77,7 @@ const App = () => {
 };
 ```
 
-### `useDarkMode(f)`
+### 🍩 `useDarkMode(f)`
 
 Toggles (and saves to localStorage) dark mode
 
@@ -103,7 +103,7 @@ function App() {
 }
 ```
 
-### `useDebounce(f)`
+### 🍜 `useDebounce(f)`
 
 Debounce any fast changing value
 
@@ -147,7 +147,7 @@ const App = () => {
 };
 ```
 
-### `useDimensions(f)`
+### 🥡 `useDimensions(f)`
 
 Gives the dimensions of any element
 
@@ -179,7 +179,7 @@ function App() {
 }
 ```
 
-### `useEventListener(f)`
+### 🍳 `useEventListener(f)`
 
 Adds an event listener
 
@@ -217,7 +217,7 @@ function App() {
 }
 ```
 
-### `useGeolocation(f)`
+### 🌯 `useGeolocation(f)`
 
 Gets and watches for the geolocation of the user
 
@@ -258,7 +258,7 @@ function App() {
 }
 ```
 
-### `useHover(f)`
+### 🌭 `useHover(f)`
 
 Know when the mouse if hovering over an element
 
@@ -277,7 +277,7 @@ function App() {
 }
 ```
 
-### `useInterval(f)`
+### 🍦 `useInterval(f)`
 
 Makes `setInterval` way easier
 
@@ -308,7 +308,7 @@ const App = () => {
 };
 ```
 
-### `useKeyPress(f)`
+### 🥧 `useKeyPress(f)`
 
 Adds keydown/keyup listeners to any key
 
@@ -330,7 +330,7 @@ function App() {
 }
 ```
 
-### `useLocalStorage(f)`
+### 🍱 `useLocalStorage(f)`
 
 Store and set values into localStorage
 
@@ -364,7 +364,7 @@ function App() {
 }
 ```
 
-### `useLockBodyScroll(f)`
+### 🍋 `useLockBodyScroll(f)`
 
 Locks the scrolling - used for things like modals
 
@@ -398,7 +398,7 @@ function Modal({ title, children, onClose }) {
 }
 ```
 
-### `useMedia(f)`
+### 🍉 `useMedia(f)`
 
 Media Queries for Javascript
 
@@ -447,7 +447,7 @@ function App() {
 }
 ```
 
-### `useMultiKeyPress(f)`
+### 🥭 `useMultiKeyPress(f)`
 
 Listens for mulitple keypresses at a time
 
@@ -465,7 +465,7 @@ function App() {
 }
 ```
 
-### `useOnClickOutside(f)`
+### 🥑 `useOnClickOutside(f)`
 
 Event listener for clicking outside of an element
 
@@ -500,7 +500,7 @@ function App() {
 ```
 
 
-### `usePrevious(f)`
+### 🍿 `usePrevious(f)`
 
 Returns the previously set value
 
@@ -531,7 +531,7 @@ function App() {
 ```
 
 
-### `useScript(f)`
+### 🍣 `useScript(f)`
 
 Creates a script tag and loads the script
 
@@ -568,7 +568,7 @@ function App() {
 ```
 
 
-### `useWhyDidYouUpdate(f)`
+### 🍷 `useWhyDidYouUpdate(f)`
 
 Console logs the reason for why a component updated
 
@@ -589,7 +589,7 @@ const Counter = React.memo(props => {
 });
 ```
 
-### `useWindowScroll(f)`
+### 🥖 `useWindowScroll(f)`
 
 Re-renders on window scroll.
 
@@ -614,7 +614,7 @@ const App = () => {
 ```
 
 
-### `useWindowSize(f)`
+### 🥮 `useWindowSize(f)`
 
 Gets the window size and listens for resizes
 
