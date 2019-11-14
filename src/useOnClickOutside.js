@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 function useOnClickOutside(ref, callback) {
   useEffect(
     () => {
-      const listener = event => {
+      const listener = (event) => {
         // Do nothing if clicking ref's element or descendent elements
         if (!ref.current || ref.current.contains(event.target)) {
           return;
@@ -26,7 +26,7 @@ function useOnClickOutside(ref, callback) {
     // ... callback/cleanup to run every render. It's not a big deal ...
     // ... but to optimize you can wrap callback in useCallback before ...
     // ... passing it into this hook.
-    [ref, callback]
+    [ref, callback],
   );
 }
 

@@ -1,6 +1,6 @@
 // original source - https://github.com/donavon/use-event-listener/blob/develop/src/index.js
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 
 function useEventListener(eventName, handler, element = window) {
   const savedHandler = useRef();
@@ -23,7 +23,7 @@ function useEventListener(eventName, handler, element = window) {
         element.removeEventListener(eventName, eventListener);
       };
     },
-    [eventName, element]
+    [eventName, element],
   );
 }
 

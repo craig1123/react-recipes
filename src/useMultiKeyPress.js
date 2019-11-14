@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function useMultiKeyPress() {
   const [keysPressed, setKeyPressed] = useState(new Set([]));
@@ -13,11 +13,11 @@ function useMultiKeyPress() {
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", downHandler);
-    window.addEventListener("keyup", upHandler);
+    window.addEventListener('keydown', downHandler);
+    window.addEventListener('keyup', upHandler);
     return () => {
-      window.removeEventListener("keydown", downHandler);
-      window.removeEventListener("keyup", upHandler);
+      window.removeEventListener('keydown', downHandler);
+      window.removeEventListener('keyup', upHandler);
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
 

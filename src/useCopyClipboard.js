@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
-import { useState, useEffect } from "react";
-import copyToClipboard from "../utils/copyToClipboard";
+import { useState, useEffect } from 'react';
+import copyToClipboard from '../utils/copyToClipboard';
 
 function useCopyClipboard(successDuration = 2000) {
   const [isCopied, setIsCopied] = useState(false);
@@ -17,10 +17,10 @@ function useCopyClipboard(successDuration = 2000) {
 
   return [
     isCopied,
-    text => {
+    (text) => {
       const didCopy = copyToClipboard(text);
       setIsCopied(didCopy);
-    }
+    },
   ];
 }
 
