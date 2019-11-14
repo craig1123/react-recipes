@@ -10,8 +10,11 @@
 <p align="center" style="font-size: 1.2rem;">A React Hooks utility library containing popular customized hooks</p>
 <p align="center" style="font-size: 1.2rem;">What's your favorite dish?</p>
 
-![](https://img.shields.io/badge/license-MIT-green.svg)
 [![Build Status](https://travis-ci.com/craig1123/react-recipes.svg?branch=master)](https://travis-ci.com/craig1123/react-recipes)
+![](https://badgen.net/npm/v/react-recipes)
+![](https://badgen.net/bundlephobia/minzip/react-recipes)
+![](https://badgen.net/npm/dm/react-recipes)
+![](https://img.shields.io/badge/license-MIT-green.svg)
 
 ```bash
 npm i react-recipes --save
