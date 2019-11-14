@@ -28,7 +28,7 @@ yarn add react-recipes
 
 | Name                                            | Returns                                               | Arguments                                                                               |
 | ----------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| 🥠 [`useCopyClipboard`](#usecopyclipboardf)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
+| [`🥠 useCopyClipboard`](#usecopyclipboard)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
 | 🍩 [`useDarkMode`](#useDarkModef)               | [enabled, setEnabledState]                            | -                                                                                       |
 | 🍜 [`useDebounce`](#useDebouncef)               | debouncedValue                                        | (value, delay)                                                                          |
 | 🥡 [`useDimensions`](#useDimensionsf)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250, initialDimensions: {}, effectDependencies: [])          |
@@ -50,7 +50,7 @@ yarn add react-recipes
 
 ## Documentation
 
-### 🥠 `useCopyClipboard(f)`
+### 🥠 `useCopyClipboard`
 
 Copies any string to the clipboard
 
