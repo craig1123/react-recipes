@@ -25,24 +25,27 @@ yarn add react-recipes
 
 | Name                                         | Returns                                               | Arguments                                                                               |
 | -------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [`useCopyClipboard`](#usecopyclipboardf)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
-| [`useDarkMode`](#useDarkModef)               | [enabled, setEnabledState]                            | -                                                                                       |
-| [`useDebounce`](#useDebouncef)               | debouncedValue                                        | (value, delay)                                                                          |
-| [`useDimensions`](#useDimensionsf)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250, initialDimensions: {}, effectDependencies: [])                                 |
-| [`useEventListener`](#useEventListenerf)     | -                                                     | (eventName, handle, element: window)                                                    |
-| [`useGeolocation`](#useGeolocationf)         | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
-| [`useHover`](#useHoverf)                     | [callbackRef, value]                                  | -                                                                                       |
-| [`useInterval`](#useIntervalf)               | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
-| [`useKeyPress`](#useKeyPressf)               | keyPressed                                            | (targetKey)                                                                             |
-| [`useLocalStorage`](#useLocalStoragef)       | [storedValue, setValue]                               | (key, initialValue)                                                                     |
-| [`useLockBodyScroll`](#useLockBodyScrollf)   | -                                                     | -                                                                                       |
-| [`useMedia`](#useMediaf)                     | value                                                 | (queries, values, defaultValue)                                                         |
-| [`useMultiKeyPress`](#useMultiKeyPressf)     | keysPressed                                           | (targetKey)                                                                             | 
-| [`usePrevious`](#usePreviousf)               | previous                                              | (value)                                                                                 |
-| [`useScript`](#useScriptf)                   | [loaded, error]                                       | (src)                                                                                   |
-| [`useWhyDidYouUpdate`](#useWhyDidYouUpdatef) | -                                                     | (name, props)                                                                           |
-| [`useWindowScroll`](#useWindowScrollf)       | { x, y }                                              | -                                                                                       |
-| [`useWindowSize`](#useWindowSizef)           | { height, width }                                     | (initialWidth, initialHeight)                                                           |
+| 🥠 [`useCopyClipboard`](#usecopyclipboardf)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
+| 🍩 [`useDarkMode`](#useDarkModef)               | [enabled, setEnabledState]                            | -                                                                                       |
+| 🍜 [`useDebounce`](#useDebouncef)               | debouncedValue                                        | (value, delay)                                                                          |
+| 🥡 [`useDimensions`](#useDimensionsf)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250, initialDimensions: {}, effectDependencies: [])                                 |
+| 🍳 [`useEventListener`](#useEventListenerf)     | -                                                     | (eventName, handle, element: window)                                                    |
+| 🌯 [`useGeolocation`](#useGeolocationf)         | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
+| 🌭 [`useHover`](#useHoverf)                     | [callbackRef, value]                                  | -                                                                                       |
+| 🍦 [`useInterval`](#useIntervalf)               | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
+| 🥧 [`useKeyPress`](#useKeyPressf)               | keyPressed                                            | (targetKey)                                                                             |
+| 🍱 [`useLocalStorage`](#useLocalStoragef)       | [storedValue, setValue]                               | (key, initialValue)                                                                     |
+| 🍋 [`useLockBodyScroll`](#useLockBodyScrollf)   | -                                                     | -                                                                                       |
+| 🍉 [`useMedia`](#useMediaf)                     | value                                                 | (queries, values, defaultValue)                                                         |
+| 🥭 [`useMultiKeyPress`](#useMultiKeyPressf)     | keysPressed                                           | (targetKey)
+                                             | 
+| 🥑 [`useOnClickOutside`](#useOnClickOutsidef)   | -                                                     | (ref, callback)
+                                             | 
+| 🍿 [`usePrevious`](#usePreviousf)               | previous                                              | (value)                                                                                 |
+| 🍣 [`useScript`](#useScriptf)                   | [loaded, error]                                       | (src)                                                                                   |
+| 🍷 [`useWhyDidYouUpdate`](#useWhyDidYouUpdatef) | -                                                     | (name, props)                                                                           |
+| 🥖 [`useWindowScroll`](#useWindowScrollf)       | { x, y }                                              | -                                                                                       |
+| 🥮 [`useWindowSize`](#useWindowSizef)           | { height, width }                                     | (initialWidth, initialHeight)                                                           |
 
 ## Documentation
 
