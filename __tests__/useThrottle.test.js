@@ -10,9 +10,9 @@ describe('useThrottle', () => {
     jest.clearAllTimers();
   });
 
-  // afterAll(() => {
-  //   jest.useRealTimers();
-  // });
+  afterAll(() => {
+    jest.useRealTimers();
+  });
 
   it('should be defined', () => {
     expect(useThrottle).toBeDefined();
