@@ -28,6 +28,7 @@ yarn add react-recipes
 
 | Name                                            | Returns                                               | Arguments                                                                               |
 | ----------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| 🍪 [`useCookie`](#-useCookie)                   | [cookieValue, updateCookie, deleteCookie]             | (cookieName, initialValue)                                                                        |
 | 🥠 [`useCopyClipboard`](#-usecopyclipboard)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
 | 🍩 [`useDarkMode`](#-useDarkMode)               | [enabled, setEnabledState]                            | -                                                                                       |
 | 🍜 [`useDebounce`](#-useDebounce)               | debouncedValue                                        | (value, delay)                                                                          |
@@ -51,6 +52,38 @@ yarn add react-recipes
 | 🥮 [`useWindowSize`](#-useWindowSize)           | { height, width }                                     | (initialWidth, initialHeight)                                                           |
 
 ## Documentation
+
+### 🍪 `useCookie`
+
+Create, read, or delete cookies (mmmm...cookie)
+
+#### Arguments
+
+- `cookieName: String`: Name of cookie
+- `initialValue?: String`: First value of cookie
+
+#### Returns
+
+- `cookieValue: String`: Current value of the cookie
+- `updateCookie: Function`: Set a new value of the cookie
+- `deleteCookie: Function`: Bye bye cookie
+
+```js
+import { useCookie } from "react-recipes";
+
+const App = () => {
+  const [userToken, setUserToken, deleteUserToken] = useCookie('token', '0');
+
+  render(
+    <div>
+      <p>{userToken}</p>
+      <button onClick={() => setUserToken('123')}>Change token</button>
+      <button onClick={() => deleteUserToken()}>Delete token</button>
+    </div>
+  );
+};
+```
+
 
 ### 🥠 `useCopyClipboard`
 

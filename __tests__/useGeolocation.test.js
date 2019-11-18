@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import useGeoLocation from '../src/useGeolocation';
 import renderer, { act } from 'react-test-renderer';
+import useGeoLocation from '../src/useGeolocation';
 
-const Demo = ({watch, settings}) => {
+const Demo = ({ watch, settings }) => {
   const {
     latitude,
     longitude,
@@ -13,12 +14,12 @@ const Demo = ({watch, settings}) => {
 
   return (
     <>
-      {!latitude && !error && <><div>Trying to fetch location...</div><br/></>}
+      {!latitude && !error && <><div>Trying to fetch location...</div><br /></>}
       <code>
-        latitude: {latitude}<br/>
-        longitude: {longitude}<br/>
-        timestamp: {timestamp}<br/>
-        accuracy: {accuracy && `${accuracy}m`}<br/>
+        latitude: {latitude}<br />
+        longitude: {longitude}<br />
+        timestamp: {timestamp}<br />
+        accuracy: {accuracy && `${accuracy}m`}<br />
         error: {error}
       </code>
     </>
@@ -37,7 +38,7 @@ const mockPosition = {
 const mockWatcherId = 1;
 
 const mockGeolocation = {
-  watchPosition: onChange => {
+  watchPosition: (onChange) => {
     onChange(mockPosition);
     return mockWatcherId;
   },
@@ -62,7 +63,7 @@ describe('useGeoLocation', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return latitude and longitude while watching', () => {    
+  it('should return latitude and longitude while watching', () => {
     global.navigator.geolocation = mockGeolocation;
     let test;
     act(() => {
@@ -72,7 +73,7 @@ describe('useGeoLocation', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return latitude and longitude while fetching', () => {    
+  it('should return latitude and longitude while fetching', () => {
     global.navigator.geolocation = mockGeolocation;
     let test;
     act(() => {
@@ -82,7 +83,7 @@ describe('useGeoLocation', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return error while watching', () => {    
+  it('should return error while watching', () => {
     global.navigator.geolocation = mockGeolocationError;
     let test;
     act(() => {
@@ -92,7 +93,7 @@ describe('useGeoLocation', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return error while fetching', () => {    
+  it('should return error while fetching', () => {
     global.navigator.geolocation = mockGeolocationError;
     let test;
     act(() => {
@@ -103,7 +104,7 @@ describe('useGeoLocation', () => {
   });
 
   it('should return error if navigator is not supported', () => {
-    global.navigator.geolocation = null; 
+    global.navigator.geolocation = null;
     let test;
     act(() => {
       test = renderer.create(<Demo />);
@@ -124,7 +125,7 @@ describe('useGeoLocation', () => {
     expect(global.navigator.geolocation.clearWatch).toHaveBeenCalledWith(mockWatcherId);
   });
 
-  it('should return latitude and longitude even if watch is undefined', () => {    
+  it('should return latitude and longitude even if watch is undefined', () => {
     global.navigator.geolocation = mockGeolocation;
     let test;
     act(() => {
