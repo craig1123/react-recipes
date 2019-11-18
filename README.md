@@ -44,6 +44,7 @@ yarn add react-recipes
 | 🥑 [`useOnClickOutside`](#-useOnClickOutside)   | -                                                     | (ref, callback)                                                                         | 
 | 🍿 [`usePrevious`](#-usePrevious)               | previous                                              | (value)                                                                                 |
 | 🍣 [`useScript`](#-useScript)                   | [loaded, error]                                       | (src)                                                                                   |
+| 🍏 [`useThrottle`](#-useThrottle)               | throttledValue                                        | (value, ms: 250)                                                                        |
 | 🍷 [`useWhyDidYouUpdate`](#-useWhyDidYouUpdate) | -                                                     | (name, props)                                                                           |
 | 🥖 [`useWindowScroll`](#-useWindowScroll)       | { x, y }                                              | -                                                                                       |
 | 🥮 [`useWindowSize`](#-useWindowSize)           | { height, width }                                     | (initialWidth, initialHeight)                                                           |
@@ -569,6 +570,35 @@ function App() {
     </div>
   );
 }
+```
+
+
+### 🍏 `useThrottle`
+
+Throttles a value
+
+#### Arguments
+
+- `value: Any`: The value to be throttled
+- `ms: Number`: The time in milliseconds to throttle
+
+#### Returns
+
+- `throttledValue: Any`: The returned value after the throttling
+
+```js
+import { useThrottle } from "react-recipes";
+
+const App = ({ value }) => {
+  const throttledValue = useThrottle(value, 250);
+
+  return (
+    <>
+      <div>Value: {value}</div>
+      <div>Throttled value: {throttledValue}</div>
+    </>
+  );
+};
 ```
 
 
