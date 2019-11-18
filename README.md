@@ -36,6 +36,7 @@ yarn add react-recipes
 | 🌯 [`useGeolocation`](#-useGeolocation)         | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
 | 🌭 [`useHover`](#-useHover)                     | [callbackRef, value]                                  | -                                                                                       |
 | 🍦 [`useInterval`](#-useInterval)               | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
+| 🍐 [`useIsClient`](#-useIsClient)               | isClient                                              |                                                                                         |
 | 🥧 [`useKeyPress`](#-useKeyPress)               | keyPressed                                            | (targetKey)                                                                             |
 | 🍱 [`useLocalStorage`](#-useLocalStorage)       | [storedValue, setValue]                               | (key, initialValue)                                                                     |
 | 🍋 [`useLockBodyScroll`](#-useLockBodyScroll)   | -                                                     | -                                                                                       |
@@ -310,6 +311,25 @@ const App = () => {
   }, 7500, true, [user]);
 
   ...
+};
+```
+
+
+### 🍐 `useIsClient`
+
+Check if the javascript is loaded from the web client
+
+#### Returns
+
+- `isClient: Bool`: true when window is available. False when server side rendered
+
+```js
+import { useIsClient } from "react-recipes";
+
+const App = () => {
+  const isClient = useIsClient();
+
+  return <div>{isClient && "client side rendered"}</div>;
 };
 ```
 

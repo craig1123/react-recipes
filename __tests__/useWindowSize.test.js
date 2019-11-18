@@ -3,7 +3,7 @@ import { replaceRaf } from 'raf-stub';
 import useWindowSize from '../src/useWindowSize';
 import isClient from '../utils/isClient';
 
-var requestAnimationFrame = {
+let requestAnimationFrame = {
   reset: () => null,
   step: (steps, duration) => null,
 };
