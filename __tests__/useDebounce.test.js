@@ -21,11 +21,11 @@ describe('useDebounce', () => {
 
   function getHook(val = '', ms = 5) {
     return renderHook(({ value = 'test', delay = 5 }) => useDebounce(value, delay), {
-        initialProps: {
-          delay: ms,
-          value: val,
-        },
-      });
+      initialProps: {
+        delay: ms,
+        value: val,
+      },
+    });
   }
 
   it('should cancel function call on unmount', () => {

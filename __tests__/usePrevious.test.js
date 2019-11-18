@@ -1,8 +1,8 @@
-import { renderHook } from '@testing-library/react-hooks'
-import usePrevious from '../src/usePrevious.js';
+import { renderHook } from '@testing-library/react-hooks';
+import usePrevious from '../src/usePrevious';
 
 describe('usePrevious', () => {
-  test('should return the previous value', () => {
+  it('should return the previous value', () => {
     const { result, rerender } = renderHook(props => usePrevious(props), { initialProps: 0 });
 
     expect(result.current).toBe(undefined);

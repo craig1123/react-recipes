@@ -27,7 +27,7 @@ it('should init hook with custom delay', () => {
 });
 
 it('should init hook and run on load', () => {
-  const { result } = renderHook(() => useInterval(callback, 0, true));
+  renderHook(() => useInterval(callback, 0, true));
 
   expect(setInterval).toHaveBeenCalledTimes(1);
 });
