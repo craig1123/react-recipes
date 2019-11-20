@@ -54,6 +54,6 @@ describe('useEventListener', () => {
 
   test('fails safe with SSR (i.e. no window)', () => {
     const handler = jest.fn();
-    renderHook(() => useEventListener('foo', handler, {}));
+    renderHook(() => useEventListener('foo', handler));
   });
 });

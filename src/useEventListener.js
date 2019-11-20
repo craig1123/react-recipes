@@ -1,8 +1,9 @@
 // original source - https://github.com/donavon/use-event-listener/blob/develop/src/index.js
 
 import { useRef, useEffect } from 'react';
+import isClient from '../utils/isClient';
 
-function useEventListener(eventName, handler, element = window) {
+function useEventListener(eventName, handler, element = isClient ? window : undefined) {
   const savedHandler = useRef();
 
   useEffect(() => {
