@@ -13,7 +13,7 @@
 [![Build Status](https://travis-ci.com/craig1123/react-recipes.svg?branch=master)](https://travis-ci.com/craig1123/react-recipes)
 ![](https://badgen.net/npm/v/react-recipes)
 ![](https://badgen.net/bundlephobia/minzip/react-recipes)
-![](https://badgen.net/npm/dm/react-recipes)
+![](https://badgen.net/npm/dt/react-recipes)
 ![](https://img.shields.io/badge/license-MIT-green.svg)
 
 ```bash
