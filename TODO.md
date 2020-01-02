@@ -7,8 +7,6 @@
 * useFullScreen
 
 #### Browser APIs
-* useSpeechRecognition
-* useSpeechSynthesis
 * useMemoryPerf
 * useIntersectionObserver
 * useAudio
