@@ -3,7 +3,6 @@
 ## New Hooks
 * usePortal?
 * useForceUpdate
-* useOnlineStatus
 * useArray
 * useFullScreen
 

@@ -37,13 +37,14 @@ yarn add react-recipes
 | 🌯 [`useGeolocation`](#-useGeolocation)         | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
 | 🌭 [`useHover`](#-useHover)                     | [callbackRef, value]                                  | -                                                                                       |
 | 🍦 [`useInterval`](#-useInterval)               | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
-| 🍐 [`useIsClient`](#-useIsClient)               | isClient                                              |                                                                                         |
+| 🍐 [`useIsClient`](#-useIsClient)               | isClient                                              | -                                                                                       |
 | 🥧 [`useKeyPress`](#-useKeyPress)               | keyPressed                                            | (targetKey)                                                                             |
 | 🍱 [`useLocalStorage`](#-useLocalStorage)       | [storedValue, setValue]                               | (key, initialValue)                                                                     |
 | 🍋 [`useLockBodyScroll`](#-useLockBodyScroll)   | -                                                     | -                                                                                       |
 | 🍉 [`useMedia`](#-useMedia)                     | value                                                 | (queries, values, defaultValue)                                                         |
 | 🥭 [`useMultiKeyPress`](#-useMultiKeyPress)     | keysPressed                                           | (targetKey)                                                                             | 
 | 🥑 [`useOnClickOutside`](#-useOnClickOutside)   | -                                                     | (ref, callback)                                                                         | 
+| 🥒 [`useOnlineStatus`](#-useOnlineStatus)       | onlineStatus                                          | -                                                                                       | 
 | 🍿 [`usePrevious`](#-usePrevious)               | previous                                              | (value)                                                                                 |
 | 🍣 [`useScript`](#-useScript)                   | [loaded, error]                                       | (src)                                                                                   |
 | 🍏 [`useThrottle`](#-useThrottle)               | throttledValue                                        | (value, ms: 250)                                                                        |
@@ -553,6 +554,26 @@ function App() {
       ) : (
         <button onClick={() => setModalOpen(true)}>Open Modal</button>
       )}
+    </div>
+  );
+}
+```
+
+
+### 🥒 `useOnlineStatus`
+
+Subscribe to online/offline events and the navigator.onLine property to see current status
+
+
+```js
+import { useOnlineStatus } from "react-recipes";
+
+function App() {
+  const onlineStatus = useOnlineStatus();
+
+  return (
+    <div>
+      <h1>You are {onlineStatus ? "Online" : "Offline"}</h1>
     </div>
   );
 }
