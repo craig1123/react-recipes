@@ -28,7 +28,7 @@ yarn add react-recipes
 
 | Name                                            | Returns                                               | Arguments                                                                               |
 | ----------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| 🍪 [`useCookie`](#-useCookie)                   | [cookieValue, updateCookie, deleteCookie]             | (cookieName, initialValue)                                                                        |
+| 🍪 [`useCookie`](#-useCookie)                   | [cookieValue, updateCookie, deleteCookie]             | (cookieName, initialValue)                                                              |
 | 🥠 [`useCopyClipboard`](#-usecopyclipboard)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
 | 🍩 [`useDarkMode`](#-useDarkMode)               | [enabled, setEnabledState]                            | -                                                                                       |
 | 🍜 [`useDebounce`](#-useDebounce)               | debouncedValue                                        | (value, delay)                                                                          |
@@ -50,6 +50,7 @@ yarn add react-recipes
 | 🍷 [`useWhyDidYouUpdate`](#-useWhyDidYouUpdate) | -                                                     | (name, props)                                                                           |
 | 🥖 [`useWindowScroll`](#-useWindowScroll)       | { x, y }                                              | -                                                                                       |
 | 🥮 [`useWindowSize`](#-useWindowSize)           | { height, width }                                     | (initialWidth, initialHeight)                                                           |
+| 🥝 [`useWorker`](#-useWorker)                   | worker instance                                       | (scriptPath, workerOptions, attributes)                                                 |
 
 ## Documentation
 
@@ -725,5 +726,39 @@ function App() {
       {width}px / {height}px
     </div>
   );
+}
+```
+
+### 🥝 `useWorker`
+
+Easy function to set up workers
+
+#### Arguments
+
+- `scriptPath: String`: Path to the script file that a new Worker is to be created with
+- `workerOptions: Object`: `onMessage` and `onMessageError` options can be passed to communicate with the worker
+- `attributes: Object`: Event handlers to attach to the worker
+
+#### Returns
+
+- `worker: Worker`: The worker instance
+
+```js
+import { useWorker } from "react-recipes";
+
+function App() {
+  const [value, setValue] = useState(0);
+  useWorker('/worker.js', {
+    onMessage: (e) => {
+      console.log('message received from worker');
+      console.log(e.data);
+      setValue(e.data);
+    },
+    onMessageError: (e) => {
+      console.log(e);
+    },
+  });
+
+  return value;
 }
 ```
