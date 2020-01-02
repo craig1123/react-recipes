@@ -1,6 +1,15 @@
+## v0.2.0 (2020-01-02)
+
+#### Features :moneybag:
+
+- [#23](https://github.com/craig1123/react-recipes/pull/23) Added `useSpeechRecognition`
+- [#23](https://github.com/craig1123/react-recipes/pull/23) Added `useSpeechSynthesis`
+- [#22](https://github.com/craig1123/react-recipes/pull/22) Added `useOnlineStatus`
+- [#21](https://github.com/craig1123/react-recipes/pull/21) Added `useWorker`
+
 ## v0.1.0 (2019-11-21)
 
-#### feature :moneybag:
+#### Features :moneybag:
 
 - [#19](https://github.com/craig1123/react-recipes/pull/19) Made `useEventListener` SSR friendly ([@pixelize](https://github.com/pixelize))
 - [#18](https://github.com/craig1123/react-recipes/pull/18) Added `useCookie` 🍪
@@ -13,7 +22,7 @@
 
 - [#14](https://github.com/craig1123/react-recipes/pull/14) `useLocalStorage` was not defined properly
 
-#### feature :moneybag:
+#### Features :moneybag:
 
 - [#13](https://github.com/craig1123/react-recipes/pull/13) Added another param to `useDimension`: `initialDimensions`
 - [#13](https://github.com/craig1123/react-recipes/pull/13) Added ResizeObserver to `useDimension`
@@ -24,7 +33,7 @@
 
 - [#12](https://github.com/craig1123/react-recipes/pull/12) useCopyToClipboard param not defined
 
-#### feature :moneybag:
+#### Features :moneybag:
 
 - [#12](https://github.com/craig1123/react-recipes/pull/12) Added another param to `useDimension`: `effectDeps`
 

@@ -650,7 +650,7 @@ function App() {
 ```
 
 
-### 🍗 `useSpeechRecognition`
+### 🍖 `useSpeechRecognition`
 
 Uses the browser's SpeechRecognition API
 
