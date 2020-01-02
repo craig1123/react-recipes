@@ -26,32 +26,34 @@ yarn add react-recipes
 
 ## 🥘 Recipes
 
-| Name                                            | Returns                                               | Arguments                                                                               |
-| ----------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| 🍪 [`useCookie`](#-useCookie)                   | [cookieValue, updateCookie, deleteCookie]             | (cookieName, initialValue)                                                              |
-| 🥠 [`useCopyClipboard`](#-usecopyclipboard)     | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
-| 🍩 [`useDarkMode`](#-useDarkMode)               | [enabled, setEnabledState]                            | -                                                                                       |
-| 🍜 [`useDebounce`](#-useDebounce)               | debouncedValue                                        | (value, delay)                                                                          |
-| 🥡 [`useDimensions`](#-useDimensions)           | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250, initialDimensions: {}, effectDependencies: [])          |
-| 🍳 [`useEventListener`](#-useEventListener)     | -                                                     | (eventName, handle, element: window)                                                    |
-| 🌯 [`useGeolocation`](#-useGeolocation)         | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
-| 🌭 [`useHover`](#-useHover)                     | [callbackRef, value]                                  | -                                                                                       |
-| 🍦 [`useInterval`](#-useInterval)               | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
-| 🍐 [`useIsClient`](#-useIsClient)               | isClient                                              | -                                                                                       |
-| 🥧 [`useKeyPress`](#-useKeyPress)               | keyPressed                                            | (targetKey)                                                                             |
-| 🍱 [`useLocalStorage`](#-useLocalStorage)       | [storedValue, setValue]                               | (key, initialValue)                                                                     |
-| 🍋 [`useLockBodyScroll`](#-useLockBodyScroll)   | -                                                     | -                                                                                       |
-| 🍉 [`useMedia`](#-useMedia)                     | value                                                 | (queries, values, defaultValue)                                                         |
-| 🥭 [`useMultiKeyPress`](#-useMultiKeyPress)     | keysPressed                                           | (targetKey)                                                                             | 
-| 🥑 [`useOnClickOutside`](#-useOnClickOutside)   | -                                                     | (ref, callback)                                                                         | 
-| 🥒 [`useOnlineStatus`](#-useOnlineStatus)       | onlineStatus                                          | -                                                                                       | 
-| 🍿 [`usePrevious`](#-usePrevious)               | previous                                              | (value)                                                                                 |
-| 🍣 [`useScript`](#-useScript)                   | [loaded, error]                                       | (src)                                                                                   |
-| 🍏 [`useThrottle`](#-useThrottle)               | throttledValue                                        | (value, ms: 250)                                                                        |
-| 🍷 [`useWhyDidYouUpdate`](#-useWhyDidYouUpdate) | -                                                     | (name, props)                                                                           |
-| 🥖 [`useWindowScroll`](#-useWindowScroll)       | { x, y }                                              | -                                                                                       |
-| 🥮 [`useWindowSize`](#-useWindowSize)           | { height, width }                                     | (initialWidth, initialHeight)                                                           |
-| 🥝 [`useWorker`](#-useWorker)                   | worker instance                                       | (scriptPath, workerOptions, attributes)                                                 |
+| Name                                                | Returns                                               | Arguments                                                                               |
+| --------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| 🍪 [`useCookie`](#-useCookie)                       | [cookieValue, updateCookie, deleteCookie]             | (cookieName, initialValue)                                                              |
+| 🥠 [`useCopyClipboard`](#-usecopyclipboard)         | [isCopied, setIsCopied]                               | (duration: 2000)                                                                        |
+| 🍩 [`useDarkMode`](#-useDarkMode)                   | [enabled, setEnabledState]                            | -                                                                                       |
+| 🍜 [`useDebounce`](#-useDebounce)                   | debouncedValue                                        | (value, delay)                                                                          |
+| 🥡 [`useDimensions`](#-useDimensions)               | [ref, dimensions, node]                               | (liveMeasure: true, delay: 250, initialDimensions: {}, effectDependencies: [])          |
+| 🍳 [`useEventListener`](#-useEventListener)         | -                                                     | (eventName, handle, element: window)                                                    |
+| 🌯 [`useGeolocation`](#-useGeolocation)             | { latitude, longitude, timestamp, accuracy, error }   | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
+| 🌭 [`useHover`](#-useHover)                         | [callbackRef, value]                                  | -                                                                                       |
+| 🍦 [`useInterval`](#-useInterval)                   | [delay, ...effectDependencies]                        | (callback, delay, runOnLoad: false, effectDependencies: [])                             |
+| 🍐 [`useIsClient`](#-useIsClient)                   | isClient                                              | -                                                                                       |
+| 🥧 [`useKeyPress`](#-useKeyPress)                   | keyPressed                                            | (targetKey)                                                                             |
+| 🍱 [`useLocalStorage`](#-useLocalStorage)           | [storedValue, setValue]                               | (key, initialValue)                                                                     |
+| 🍋 [`useLockBodyScroll`](#-useLockBodyScroll)       | -                                                     | -                                                                                       |
+| 🍉 [`useMedia`](#-useMedia)                         | value                                                 | (queries, values, defaultValue)                                                         |
+| 🥭 [`useMultiKeyPress`](#-useMultiKeyPress)         | keysPressed                                           | (targetKey)                                                                             | 
+| 🥑 [`useOnClickOutside`](#-useOnClickOutside)       | -                                                     | (ref, callback)                                                                         | 
+| 🥒 [`useOnlineStatus`](#-useOnlineStatus)           | onlineStatus                                          | -                                                                                       | 
+| 🍿 [`usePrevious`](#-usePrevious)                   | previous                                              | (value)                                                                                 |
+| 🍣 [`useScript`](#-useScript)                       | [loaded, error]                                       | (src)                                                                                   |
+| 🍖 [`useSpeechRecognition`](#-useSpeechRecognition) | { supported, listen, listening, stop }                | ({ onEnd })                                                                             |
+| 🍗 [`useSpeechSynthesis`](#-useSpeechSynthesis)     | { supported, speak, speaking, cancel, voices }        | ({ onEnd, onResult })                                                                             |
+| 🍏 [`useThrottle`](#-useThrottle)                   | throttledValue                                        | (value, ms: 250)                                                                        |
+| 🍷 [`useWhyDidYouUpdate`](#-useWhyDidYouUpdate)     | -                                                     | (name, props)                                                                           |
+| 🥖 [`useWindowScroll`](#-useWindowScroll)           | { x, y }                                              | -                                                                                       |
+| 🥮 [`useWindowSize`](#-useWindowSize)               | { height, width }                                     | (initialWidth, initialHeight)                                                           |
+| 🥝 [`useWorker`](#-useWorker)                       | worker instance                                       | (scriptPath, workerOptions, attributes)                                                 |
 
 ## Documentation
 
@@ -67,8 +69,8 @@ Create, read, or delete cookies (mmmm...cookie)
 #### Returns
 
 - `cookieValue: String`: Current value of the cookie
-- `updateCookie: Function`: Set a new value of the cookie
-- `deleteCookie: Function`: Bye bye cookie
+- `updateCookie: Function(string)`: Set a new value of the cookie
+- `deleteCookie: Function()`: Bye bye cookie
 
 ```js
 import { useCookie } from "react-recipes";
@@ -98,7 +100,7 @@ Copies any string to the clipboard
 #### Returns
 
 - `isCopied: Bool`: true when string was copied for the length of the duration.
-- `setIsCopied: Function`: Copies the string to the clipboard
+- `setIsCopied: Function(string)`: Copies the string to the clipboard
 
 ```js
 import { useCopyClipboard } from "react-recipes";
@@ -125,7 +127,7 @@ Toggles (and saves to localStorage) dark mode
 #### Returns
 
 - `darkMode: Bool`: true when dark.
-- `setDarkMode: Function`: Toggles darkMode
+- `setDarkMode: Function()`: Toggles darkMode
 
 ```js
 import { useDarkMode } from "react-recipes";
@@ -642,6 +644,133 @@ function App() {
           Script function call response: <b>{TEST_SCRIPT.start()}</b>
         </div>
       )}
+    </div>
+  );
+}
+```
+
+
+### 🍗 `useSpeechRecognition`
+
+Uses the browser's SpeechRecognition API
+
+#### Arguments
+
+- `onEnd: Function`: Called when SpeechRecognition stops listening.
+- `onResult: Function(string)`: Called when SpeechRecognition has a result. It is called with a string containing a transcript of the recognized speech.
+
+#### Returns
+
+- `listen: Function({ interimResults: Bool, lang: String })`: Call to make the browser start listening for input. Every time it processes a result, it will forward a transcript to the provided onResult function.
+  - `interimResults: Bool`: Default is true. SpeechRecognition can provide realtime results as it's trying to figure out the best match for the input. Set to false if you only want the final result.
+  - `lang: string`: The language the SpeechRecognition will try to interpret the input in. Use the languageCode from this list of languages that Chrome supports ![(here)](https://cloud.google.com/speech-to-text/docs/languages)
+- `stop: Function()`: Makes SpeechRecognition stop listening. This will call the provided onEnd function as well.
+- `listening: Bool`: Whether or not SpeechRecognition is actively listening
+- `supported: Bool`: Whether or not the browser supports SpeechRecognition
+
+```js
+import { useSpeechRecognition } from "react-recipes";
+
+function App() {
+  const [value, setValue] = useState('');
+  const [ended, setEnded] = useState(false);
+  const onResult = result => setValue(result);
+  const onEnd = () => setEnded(true);
+  const {
+    listen,
+    listening,
+    stop,
+    supported,
+  } = useSpeechRecognition({
+    onResult,
+    onEnd,
+  });
+
+  if (!supported) {
+    return 'Speech Recognition is not supported. Upgrade your browser';
+  }
+
+  const onListen = () => {
+    listen({ interimResults: true, lang: 'en-US' });
+  };
+
+  return (
+    <div>
+      <textarea
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+      <button onMouseDown={onListen} onMouseUp={stop}>
+        🎤
+      </button>
+      {listening && <div>Go ahead I'm listening</div>}
+      <p>{ended && 'Speech has stoped listening'}</p>
+    </div>
+  );
+}
+```
+
+
+### 🍗 `useSpeechSynthesis`
+
+Uses the browser's SpeechSynthesis API. It exposes the options and controls to the underlying SpeechSynthesis in the browser.
+
+#### Arguments
+
+- `onEnd: Function`: Called when SpeechSynthesis finishes reading the text or is cancelled
+
+#### Returns
+
+- `speak: Function({ text: string, voice: SpeechSynthesisVoice })`: Makes the browser read some text. You can change the voice by passing in a value from the voices array.
+- `cancel: Function()`: Makes SpeechSynthesis stop reading
+- `speaking: Bool`: Whether or not SpeechSynthesis is actively reading
+- `speaking: Bool`: Whether or not the browser supports SpeechSynthesis
+- `voices: Array`: An array of available voices which can be passed to the speak function. In some browsers voices load asynchronously. In these cases, the array will be empty until they are available. An example SpeechSynthesisVoice voice has the following properties:
+```json
+{
+  default: true
+  lang: "en-AU"
+  localService: true
+  name: "Karen"
+  voiceURI: "Karen"
+}
+```
+
+```js
+import { useSpeechSynthesis } from "react-recipes";
+
+function App() {
+  const [value, setValue] = useState('');
+  const [ended, setEnded] = useState(false);
+  const onEnd = () => setEnded(true);
+  const {
+    cancel,
+    speak,
+    speaking,
+    supported,
+    voices,
+  } = useSpeechSynthesis({ onEnd });
+
+  if (!supported) {
+    return 'Speech is not supported. Upgrade your browser';
+  }
+
+  return (
+    <div>
+      <textarea
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+      <button onClick={() => speak({ text: value, voice: voices[1] })}>Speak</button>
+      <button onClick={cancel}>Cancel</button>
+      <p>{speaking && 'Voice is speaking'}</p>
+      <p>{ended && 'Voice has ended'}</p>
+      <div>
+        <h2>Voices:</h2>
+        <div>
+          {voices.map(voice => <p key={voice}>{voice}</p>)}
+        </div>
+      </div>
     </div>
   );
 }
