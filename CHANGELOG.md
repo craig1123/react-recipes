@@ -1,3 +1,9 @@
+## v0.2.1 (2020-01-09)
+
+#### :bug:
+
+- [#25](https://github.com/craig1123/react-recipes/pull/25) some hooks weren't being imported
+
 ## v0.2.0 (2020-01-02)
 
 #### Features :moneybag:
