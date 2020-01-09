@@ -16,5 +16,4 @@
 
 ## Spice Things Up 🥘
 * Create a website. Storybook? Docz? Custom?
-* Move each hook doc to `/docs/{hook}.md`
 * Typescript!!!
