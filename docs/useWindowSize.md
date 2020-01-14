@@ -2,14 +2,11 @@
 
 Gets the window size and listens for resizes
 
-## Arguments
-
-- `src: String`: The source url to the script
-
 ## Returns
 
-- `loaded: Bool`: Did the script load?
-- `error: Bool`: Did the script error out?
+- `state: Object`
+  - `width: Number`: width of the window's viewport
+  - `height: Number`: height of the window's viewport
 
 ## Usage
 
