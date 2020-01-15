@@ -2,6 +2,11 @@
 
 Gets the window size and listens for resizes
 
+## Arguments
+
+- `initialWidth: Number`: initial width used as a fallback for SSR
+- `initialHeight: Number`: initial height used as a fallback for SSR
+
 ## Returns
 
 - `state: Object`
