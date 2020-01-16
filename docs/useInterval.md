@@ -9,11 +9,6 @@ Makes `setInterval` way easier
 - `runOnLoad?: Bool`: Whether or not to run interval on mount, default is false.
 - `effectDependencies?: Array`: List of effects to re-call callback, default is `[]`.
 
-## Returns
-
-- `isCopied: Bool`: true when string was copied for the length of the duration.
-- `setIsCopied: Function`: Copies the string to the clipboard
-
 ## Usage
 
 ```js

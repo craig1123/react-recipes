@@ -2,6 +2,10 @@
 
 Subscribe to online/offline events and the navigator.onLine property to see current status
 
+## Returns
+
+- `onlineStatus: Bool`: current online status
+
 ## Usage
 
 ```js

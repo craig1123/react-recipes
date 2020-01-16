@@ -11,7 +11,7 @@ Uses the browser's SpeechSynthesis API. It exposes the options and controls to t
 - `speak: Function({ text: string, voice: SpeechSynthesisVoice })`: Makes the browser read some text. You can change the voice by passing in a value from the voices array.
 - `cancel: Function()`: Makes SpeechSynthesis stop reading
 - `speaking: Bool`: Whether or not SpeechSynthesis is actively reading
-- `speaking: Bool`: Whether or not the browser supports SpeechSynthesis
+- `supported: Bool`: Whether or not the browser supports SpeechSynthesis
 - `voices: Array`: An array of available voices which can be passed to the speak function. In some browsers voices load asynchronously. In these cases, the array will be empty until they are available. An example SpeechSynthesisVoice voice has the following properties:
 ```json
 {

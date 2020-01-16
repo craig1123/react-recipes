@@ -5,7 +5,7 @@ Media Queries for Javascript
 ## Arguments
 
 - `queries: Array`: List of Media Query strings
-- `values: Array`: List of values tha correlates to the query list
+- `values: Array`: List of values that correlates to the query list
 - `defaultValue: Any`: default value of media query
 
 ## Returns
