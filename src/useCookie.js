@@ -5,7 +5,7 @@ const setCookie = (name, value, days, path) => {
   document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=${path}`;
 };
 
-const getCookie = name => document.cookie.split('; ').reduce((r, v) => {
+const getCookie = (name) => document.cookie.split('; ').reduce((r, v) => {
   const parts = v.split('=');
   return parts[0] === name ? decodeURIComponent(parts[1]) : r;
 }, '');
