@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import useCookie from '../src/useCookie';
 
-describe('useCookies', () => {
+describe('useCookie', () => {
   beforeEach(() => {
     const document = {};
     global.document = document;

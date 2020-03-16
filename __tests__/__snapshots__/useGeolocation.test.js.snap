@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`useGeoLocation should return empty values by default 1`] = `
+exports[`useGeolocation should return empty values by default 1`] = `
 Array [
   <div>
     Trying to fetch location...
@@ -20,7 +20,7 @@ Array [
 ]
 `;
 
-exports[`useGeoLocation should return empty values by default in watching mode 1`] = `
+exports[`useGeolocation should return empty values by default in watching mode 1`] = `
 <code>
   latitude: 
   <br />
@@ -35,7 +35,7 @@ exports[`useGeoLocation should return empty values by default in watching mode 1
 </code>
 `;
 
-exports[`useGeoLocation should return error if navigator is not supported 1`] = `
+exports[`useGeolocation should return error if navigator is not supported 1`] = `
 <code>
   latitude: 
   <br />
@@ -50,7 +50,7 @@ exports[`useGeoLocation should return error if navigator is not supported 1`] = 
 </code>
 `;
 
-exports[`useGeoLocation should return error while fetching 1`] = `
+exports[`useGeolocation should return error while fetching 1`] = `
 <code>
   latitude: 
   <br />
@@ -65,7 +65,7 @@ exports[`useGeoLocation should return error while fetching 1`] = `
 </code>
 `;
 
-exports[`useGeoLocation should return error while watching 1`] = `
+exports[`useGeolocation should return error while watching 1`] = `
 <code>
   latitude: 
   <br />
@@ -80,7 +80,7 @@ exports[`useGeoLocation should return error while watching 1`] = `
 </code>
 `;
 
-exports[`useGeoLocation should return latitude and longitude even if watch is undefined 1`] = `
+exports[`useGeolocation should return latitude and longitude even if watch is undefined 1`] = `
 <code>
   latitude: 
   52.3172414
@@ -98,7 +98,7 @@ exports[`useGeoLocation should return latitude and longitude even if watch is un
 </code>
 `;
 
-exports[`useGeoLocation should return latitude and longitude while fetching 1`] = `
+exports[`useGeolocation should return latitude and longitude while fetching 1`] = `
 <code>
   latitude: 
   52.3172414
@@ -116,7 +116,7 @@ exports[`useGeoLocation should return latitude and longitude while fetching 1`] 
 </code>
 `;
 
-exports[`useGeoLocation should return latitude and longitude while watching 1`] = `
+exports[`useGeolocation should return latitude and longitude while watching 1`] = `
 <code>
   latitude: 
   52.3172414

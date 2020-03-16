@@ -1,6 +1,6 @@
 {
   "name": "react-recipes",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A React Hooks utility library containing popular customized hooks",
   "author": "@craig1123",
   "sideEffects": false,
@@ -24,7 +24,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint src utils",
     "lint:fix": "eslint --fix src utils",
-    "test": "jest --verbose --coverage --silent",
+    "test": "jest --verbose --coverage",
     "test:watch": "jest --watch --runInBand",
     "prebuild": "rimraf dist && npm run lint:fix && npm run lint && npm run test",
     "build": "microbundle -o dist/ --sourcemap false",

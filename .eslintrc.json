@@ -1,9 +1,6 @@
 {
   "extends": "airbnb",
-  "plugins": [
-    "react",
-    "react-hooks"
-  ],
+  "plugins": ["react", "react-hooks"],
   "env": {
     "browser": true,
     "jest": true
@@ -27,6 +24,9 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "no-console": "off",
+    "arrow-parens": "off",
+    "operator-linebreak": "off",
+    "arrow-body-style": "off",
     "consistent-return": "off"
   }
 }

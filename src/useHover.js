@@ -15,7 +15,7 @@ function useHover() {
   // a different element later. With useEffect, changes to ref.current
   // wouldn't cause a rerender and thus the effect would run again.
   const callbackRef = useCallback(
-    (node) => {
+    node => {
       if (ref.current) {
         ref.current.removeEventListener('mouseover', handleMouseOver);
         ref.current.removeEventListener('mouseout', handleMouseOut);
@@ -35,7 +35,6 @@ function useHover() {
 }
 
 export default useHover;
-
 
 // Usage
 
