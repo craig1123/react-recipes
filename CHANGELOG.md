@@ -1,3 +1,9 @@
+## v0.3.0 (2020-03-16)
+
+#### Features :moneybag:
+
+- [#27](https://github.com/craig1123/react-recipes/pull/27) Added `useAsync`
+
 ## v0.2.1 (2020-01-09)
 
 #### :bug:

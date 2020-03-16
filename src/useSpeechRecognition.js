@@ -14,8 +14,8 @@ const useSpeechRecognition = (onEnd = noop, onResult = noop) => {
 
   const processResult = (event) => {
     const transcript = Array.from(event.results)
-      .map(result => result[0])
-      .map(result => result.transcript)
+      .map((result) => result[0])
+      .map((result) => result.transcript)
       .join('');
 
     onResult(transcript);

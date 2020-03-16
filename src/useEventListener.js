@@ -17,7 +17,7 @@ function useEventListener(eventName, handler, element = isClient ? window : unde
       const isSupported = element && element.addEventListener;
       if (!isSupported) return;
 
-      const eventListener = event => savedHandler.current(event);
+      const eventListener = (event) => savedHandler.current(event);
       element.addEventListener(eventName, eventListener);
 
       return () => {

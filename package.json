@@ -26,7 +26,7 @@
     "lint:fix": "eslint --fix src utils",
     "test": "jest --verbose --coverage --silent",
     "test:watch": "jest --watch --runInBand",
-    "prebuild": "rimraf dist && npm run lint && npm run test",
+    "prebuild": "rimraf dist && npm run lint:fix && npm run lint && npm run test",
     "build": "microbundle -o dist/ --sourcemap false",
     "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
   },

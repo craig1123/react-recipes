@@ -1,19 +1,21 @@
 # TODO
 
 ## New Hooks
-* usePortal?
-* useForceUpdate
-* useArray
-* useFullScreen
+
+- usePortal?
+- useForceUpdate
+- useArray
+- useFullScreen
+- useAdjustColor
 
 #### Browser APIs
-* useMemoryPerf
-* useIntersectionObserver
-* useAudio
-...
 
-
+- useMemoryPerf
+- useIntersectionObserver
+- useAudio
+  ...
 
 ## Spice Things Up 🥘
-* Create a website. Storybook? Docz? Custom?
-* Typescript!!!
+
+- Create a website. Storybook? Docz? Custom?
+- Typescript!!!
