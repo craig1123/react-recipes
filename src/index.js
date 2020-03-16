@@ -1,3 +1,4 @@
+export { default as useAdjustColor } from './useAdjustColor';
 export { default as useArray } from './useArray';
 export { default as useAsync } from './useAsync';
 export { default as useCookie } from './useCookie';
