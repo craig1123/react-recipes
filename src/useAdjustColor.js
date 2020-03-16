@@ -2,7 +2,12 @@ import { useMemo } from 'react';
 import shadeBlendConvert from '../utils/shadeBlendConvert';
 
 const useAdjustColor = (percentage, color1, color2, linearBlend) => {
-  return useMemo(() => shadeBlendConvert(percentage, color1, color2, linearBlend), [percentage, color1, color2, log]);
+  return useMemo(() => shadeBlendConvert(percentage, color1, color2, linearBlend), [
+    percentage,
+    color1,
+    color2,
+    linearBlend,
+  ]);
 };
 
 export default useAdjustColor;
