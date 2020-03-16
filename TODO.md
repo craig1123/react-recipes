@@ -2,10 +2,9 @@
 
 ## New Hooks
 
-- usePortal?
+- usePortal
 - useForceUpdate
 - useArray
-- useFullScreen
 - useAdjustColor
 
 #### Browser APIs

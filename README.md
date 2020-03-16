@@ -35,6 +35,7 @@ yarn add react-recipes
 | 🍜 [`useDebounce`](./docs/useDebounce.md)                   | debouncedValue                                      | (value, delay)                                                                          |
 | 🥡 [`useDimensions`](./docs/useDimensions.md)               | [ref, dimensions, node]                             | (liveMeasure: true, delay: 250, initialDimensions: {}, effectDependencies: [])          |
 | 🍳 [`useEventListener`](./docs/useEventListener.md)         | -                                                   | (eventName, handle, element: window)                                                    |
+| 🌮 [`useFullScreen`](./docs/useFullScreen.md)               | { fullScreen, open, close, toggle }                 | (element: document.documentElement)                                                     |
 | 🌯 [`useGeolocation`](./docs/useGeolocation.md)             | { latitude, longitude, timestamp, accuracy, error } | (watch: false, settings: {enableHighAccuracy: false, timeout: Infinity, maximumAge: 0}) |
 | 🌭 [`useHover`](./docs/useHover.md)                         | [callbackRef, value]                                | -                                                                                       |
 | 🍦 [`useInterval`](./docs/useInterval.md)                   | -                                                   | (callback, delay, runOnLoad: false, effectDependencies: [])                             |

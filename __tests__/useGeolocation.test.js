@@ -1,25 +1,28 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
-import useGeoLocation from '../src/useGeolocation';
+import useGeolocation from '../src/useGeolocation';
 
 const Demo = ({ watch, settings }) => {
-  const {
-    latitude,
-    longitude,
-    timestamp,
-    accuracy,
-    error,
-  } = useGeoLocation(watch, settings);
+  const { latitude, longitude, timestamp, accuracy, error } = useGeolocation(watch, settings);
 
   return (
     <>
-      {!latitude && !error && <><div>Trying to fetch location...</div><br /></>}
+      {!latitude && !error && (
+        <>
+          <div>Trying to fetch location...</div>
+          <br />
+        </>
+      )}
       <code>
-        latitude: {latitude}<br />
-        longitude: {longitude}<br />
-        timestamp: {timestamp}<br />
-        accuracy: {accuracy && `${accuracy}m`}<br />
+        latitude: {latitude}
+        <br />
+        longitude: {longitude}
+        <br />
+        timestamp: {timestamp}
+        <br />
+        accuracy: {accuracy && `${accuracy}m`}
+        <br />
         error: {error}
       </code>
     </>
@@ -38,7 +41,7 @@ const mockPosition = {
 const mockWatcherId = 1;
 
 const mockGeolocation = {
-  watchPosition: (onChange) => {
+  watchPosition: onChange => {
     onChange(mockPosition);
     return mockWatcherId;
   },
@@ -52,7 +55,7 @@ const mockGeolocationError = {
   clearWatch: jest.fn(),
 };
 
-describe('useGeoLocation', () => {
+describe('useGeolocation', () => {
   it('should return empty values by default', () => {
     const tree = renderer.create(<Demo />).toJSON();
     expect(tree).toMatchSnapshot();

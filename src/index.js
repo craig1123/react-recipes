@@ -5,6 +5,7 @@ export { default as useDarkMode } from './useDarkMode';
 export { default as useDebounce } from './useDebounce';
 export { default as useDimensions } from './useDimensions';
 export { default as useEventListener } from './useEventListener';
+export { default as useFullScreen } from './useFullScreen';
 export { default as useGeolocation } from './useGeolocation';
 export { default as useHover } from './useHover';
 export { default as useInterval } from './useInterval';
