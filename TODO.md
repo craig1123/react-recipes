@@ -4,8 +4,6 @@
 
 - usePortal
 - useForceUpdate
-- useArray
-- useAdjustColor
 
 #### Browser APIs
 
