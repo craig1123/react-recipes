@@ -2,7 +2,7 @@
 
 #### Features :moneybag:
 
-- [#28](https://github.com/craig1123/react-recipes/pull/28) Added `useAdjustColor`, `useArray`, `useFullScreen`
+- [#28](https://github.com/craig1123/react-recipes/pull/28) Added `useAdjustColor`, `useArray`, `useFullScreen`, `useNotification`
 
 ## v0.3.0 (2020-03-16)
 
