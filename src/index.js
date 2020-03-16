@@ -1,3 +1,4 @@
+export { default as useArray } from './useArray';
 export { default as useAsync } from './useAsync';
 export { default as useCookie } from './useCookie';
 export { default as useCopyClipboard } from './useCopyClipboard';

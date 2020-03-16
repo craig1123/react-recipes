@@ -28,6 +28,7 @@ yarn add react-recipes
 
 | Name                                                        | Returns                                             | Arguments                                                                               |
 | ----------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| 🥟 [`useArray`](./docs/useArray.md)                         | { value, setValue, removeById, removeIndex, clear } | (initialValue)                                                                          |
 | 🔄 [`useAsync`](./docs/useAsync.md)                         | { error, execute, pending, value }                  | (asyncFunction, immediate: true)                                                        |
 | 🍪 [`useCookie`](./docs/useCookie.md)                       | [cookieValue, updateCookie, deleteCookie]           | (cookieName, initialValue)                                                              |
 | 🥠 [`useCopyClipboard`](./docs/useCopyClipboard.md)         | [isCopied, setIsCopied]                             | (duration: 2000)                                                                        |

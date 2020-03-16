@@ -234,48 +234,6 @@ describe('useFullScreen', () => {
     });
   });
 
-  describe('open', () => {
-    it('calls requestFullScreen', () => {
-      let open;
-      testElementRef.current.requestFullscreen = jest.fn();
-      renderHook(() => ({ open } = useFullScreen({ element: testElementRef })));
-
-      open();
-
-      expect(testElementRef.current.requestFullscreen).toHaveBeenCalled();
-    });
-
-    it('calls mozRequestFullScreen', () => {
-      let open;
-      testElementRef.current.mozRequestFullScreen = jest.fn();
-      renderHook(() => ({ open } = useFullScreen({ element: testElementRef })));
-
-      open();
-
-      expect(testElementRef.current.mozRequestFullScreen).toHaveBeenCalled();
-    });
-
-    it('calls webkitRequestFullscreen', () => {
-      let open;
-      testElementRef.current.webkitRequestFullscreen = jest.fn();
-      renderHook(() => ({ open } = useFullScreen({ element: testElementRef })));
-
-      open();
-
-      expect(testElementRef.current.webkitRequestFullscreen).toHaveBeenCalled();
-    });
-
-    it('calls msRequestFullscreen', () => {
-      let open;
-      testElementRef.current.msRequestFullscreen = jest.fn();
-      renderHook(() => ({ open } = useFullScreen({ element: testElementRef })));
-
-      open();
-
-      expect(testElementRef.current.msRequestFullscreen).toHaveBeenCalled();
-    });
-  });
-
   describe('close', () => {
     beforeEach(() => {
       document.exitFullscreen = null;
