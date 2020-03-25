@@ -22,6 +22,7 @@ export { default as useOnClickOutside } from './useOnClickOutside';
 export { default as useOnlineStatus } from './useOnlineStatus';
 export { default as usePrevious } from './usePrevious';
 export { default as useScript } from './useScript';
+export { default as useSetElementAttribute } from './useSetElementAttribute';
 export { default as useSpeechRecognition } from './useSpeechRecognition';
 export { default as useSpeechSynthesis } from './useSpeechSynthesis';
 export { default as useThrottle } from './useThrottle';

@@ -54,6 +54,7 @@ yarn add react-recipes
 | 🍣 [`useScript`](./docs/useScript.md)                       | [loaded, error]                                     | (src)                                                                                   |
 | 🍖 [`useSpeechRecognition`](./docs/useSpeechRecognition.md) | { supported, listen, listening, stop }              | ({ onEnd })                                                                             |
 | 🍗 [`useSpeechSynthesis`](./docs/useSpeechSynthesis.md)     | { supported, speak, speaking, cancel, voices }      | ({ onEnd, onResult })                                                                   |
+| 🧈 [`useSetElementAttribute`](./docs/useSetElementAttribute.md)     | -      | ( elemQuery, attributes)                                                                 |
 | 🍏 [`useThrottle`](./docs/useThrottle.md)                   | throttledValue                                      | (value, ms: 250)                                                                        |
 | 🍷 [`useWhyDidYouUpdate`](./docs/useWhyDidYouUpdate.md)     | -                                                   | (name, props)                                                                           |
 | 🥖 [`useWindowScroll`](./docs/useWindowScroll.md)           | { x, y }                                            | -                                                                                       |
