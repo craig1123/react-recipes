@@ -1,3 +1,9 @@
+## v1.0.0 (2020-05-12)
+
+#### :bug:
+
+- SSR useLocalStorage
+
 ## v1.0.0 (2020-03-16)
 
 #### Features :moneybag:
