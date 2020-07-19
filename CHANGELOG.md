@@ -1,3 +1,10 @@
+## v1.1.0 (2020-07-19)
+
+#### Features :moneybag:
+
+- Added features to useSpeechSynthesis: `onPause`, `onResume`, `onBoundary`, `onError`, `pause`, `resume`
+- Added features to useSpeechRecognition: `onResult`, `onError`
+
 ## v1.0.2 (2020-05-12)
 
 #### :bug:
