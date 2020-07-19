@@ -1,5 +1,26 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import isClient from '../utils/isClient';
+
+// original idea/source https://github.com/MikeyParton/react-speech-kit/blob/master/src/useSpeechRecognition.js
+
+// https://reactjs.org/docs/hooks-faq.html#how-to-read-an-often-changing-value-from-usecallback
+const useEventCallback = (fn, dependencies) => {
+  const ref = useRef(() => {
+    throw new Error('Cannot call an event handler while rendering.');
+  });
+
+  useEffect(() => {
+    ref.current = fn;
+  }, [fn, ...dependencies]);
+
+  return useCallback(
+    (args) => {
+      const func = ref.current;
+      return func(args);
+    },
+    [ref],
+  );
+};
 
 if (isClient) {
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -7,46 +28,63 @@ if (isClient) {
 
 const noop = () => {};
 
-const useSpeechRecognition = (onEnd = noop, onResult = noop) => {
-  const recognition = useRef(null);
+const useSpeechRecognition = (props = {}) => {
+  const { onEnd = noop, onResult = noop, onError = noop } = props;
+  const recognitionRef = useRef(null);
   const [listening, setListening] = useState(false);
   const supported = !!window.SpeechRecognition || !!window.webkitSpeechRecognition;
 
   const processResult = (event) => {
-    const transcript = Array.from(event.results)
+    const transcriptArray = Array.from(event.results)
       .map((result) => result[0])
-      .map((result) => result.transcript)
-      .join('');
-
-    onResult(transcript);
+      .map((result) => result.transcript);
+    onResult(transcriptArray);
   };
 
-  const listen = (args = {}) => {
-    if (listening) return;
-    const { lang = '', interimResults = true } = args;
-    setListening(true);
-    recognition.current.lang = lang;
-    recognition.current.interimResults = interimResults;
-    recognition.current.onresult = processResult;
-    // SpeechRecognition stops automatically after inactivity
-    // We want it to keep going until we tell it to stop
-    recognition.current.onend = () => recognition.current.start();
-    recognition.current.start();
+  const handleError = (event) => {
+    if (event.error === 'not-allowed') {
+      recognitionRef.current.onend = () => {};
+      setListening(false);
+    }
+    onError(event);
   };
 
-  const stop = () => {
-    if (!listening) return;
-    recognition.current.onresult = () => {};
-    recognition.current.onend = () => {};
+  const listen = useEventCallback(
+    (args = {}) => {
+      if (listening || !supported) return;
+      const { lang = '', interimResults = true, continuous = false, maxAlternatives = 1, grammars } = args;
+      setListening(true);
+      recognitionRef.current.lang = lang;
+      recognitionRef.current.interimResults = interimResults;
+      recognitionRef.current.onresult = processResult;
+      recognitionRef.current.onerror = handleError;
+      recognitionRef.current.continuous = continuous;
+      recognitionRef.current.maxAlternatives = maxAlternatives;
+      if (grammars) {
+        recognitionRef.current.grammars = grammars;
+      }
+      // SpeechRecognition stops automatically after inactivity
+      // We want it to keep going until we tell it to stop
+      recognitionRef.current.onend = () => recognitionRef.current.start();
+      recognitionRef.current.start();
+    },
+    [listening, supported, recognitionRef],
+  );
+
+  const stop = useEventCallback(() => {
+    if (!listening || !supported) return;
+    recognitionRef.current.onresult = () => {};
+    recognitionRef.current.onend = () => {};
+    recognitionRef.current.onerror = () => {};
     setListening(false);
-    recognition.current.stop();
+    recognitionRef.current.stop();
     onEnd();
-  };
+  }, [listening, supported, recognitionRef, onEnd]);
 
   useEffect(() => {
     if (!supported) return;
 
-    recognition.current = new window.SpeechRecognition();
+    recognitionRef.current = new window.SpeechRecognition();
   }, []);
 
   return {
@@ -58,44 +96,3 @@ const useSpeechRecognition = (onEnd = noop, onResult = noop) => {
 };
 
 export default useSpeechRecognition;
-
-
-// usage
-
-// function App() {
-//   const [value, setValue] = useState('');
-//   const [ended, setEnded] = useState(false);
-//   const onResult = result => setValue(result);
-//   const onEnd = () => setEnded(true);
-//   const {
-//     listen,
-//     listening,
-//     stop,
-//     supported,
-//   } = useSpeechRecognition({
-//     onResult,
-//     onEnd,
-//   });
-
-//   if (!supported) {
-//     return 'Speech Recognition is not supported. Upgrade your browser';
-//   }
-
-//   const onListen = () => {
-//     listen({ interimResults: true, lang: 'en-US' });
-//   };
-
-//   return (
-//     <div>
-//       <textarea
-//         value={value}
-//         onChange={event => setValue(event.target.value)}
-//       />
-//       <button onMouseDown={onListen} onMouseUp={stop}>
-//         🎤
-//       </button>
-//       {listening && <div>Go ahead I'm listening</div>}
-//       <p>{ended && 'Speech has stoped listening'}</p>
-//     </div>
-//   );
-// }

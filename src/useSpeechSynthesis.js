@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 
+// original idea/source https://github.com/MikeyParton/react-speech-kit/blob/master/src/useSpeechSynthesis.jsx
+
 const noop = () => {};
 
-const useSpeechSynthesis = (onEnd = noop) => {
+const useSpeechSynthesis = (props = {}) => {
+  const { onBoundary, onEnd = noop, onError = noop, onPause = noop, onResume = noop } = props;
   const [voices, setVoices] = useState([]);
   const [speaking, setSpeaking] = useState(false);
   const supported = !!window.speechSynthesis;
@@ -31,79 +34,76 @@ const useSpeechSynthesis = (onEnd = noop) => {
     onEnd();
   };
 
+  const handleError = (e) => {
+    setSpeaking(false);
+    onError(e);
+  };
+
+  const speak = (args = {}) => {
+    const { voice = null, text = '', rate = 1, pitch = 1, volume = 1, lang = 'en-US', continuous = false } = args;
+    if (!supported) return;
+    window.speechSynthesis.cancel();
+    const utterance = new window.SpeechSynthesisUtterance();
+    // Firefox won't repeat an utterance that has been
+    // spoken, so we need to create a new instance each time
+    utterance.lang = lang;
+    utterance.text = text;
+    utterance.voice = voice;
+    utterance.rate = rate;
+    utterance.pitch = pitch;
+    utterance.volume = volume;
+    utterance.continuous = continuous;
+    utterance.onend = handleEnd;
+    utterance.onerror = handleError;
+    utterance.onpause = onPause;
+    utterance.onresume = onResume;
+    if (onBoundary) {
+      utterance.onboundary = onBoundary;
+    }
+    window.speechSynthesis.speak(utterance);
+    setSpeaking(true);
+  };
+
+  const pause = () => {
+    if (speaking && supported) {
+      window.speechSynthesis.pause();
+      setSpeaking(false);
+    }
+  };
+
+  const resume = () => {
+    if (!speaking && supported) {
+      window.speechSynthesis.resume();
+      setSpeaking(true);
+    }
+  };
+
+  const cancel = () => {
+    if (!supported) return;
+    setSpeaking(false);
+    window.speechSynthesis.cancel();
+  };
+
   useEffect(() => {
     if (supported) {
       getVoices();
     }
+    return () => {
+      if (supported) {
+        window.speechSynthesis.cancel();
+      }
+    };
   }, []);
-
-  const speak = (args = {}) => {
-    const {
-      voice = null, text = '', rate = 1, pitch = 1,
-    } = args;
-    setSpeaking(true);
-    // Firefox won't repeat an utterance that has been
-    // spoken, so we need to create a new instance each time
-    const utterance = new window.SpeechSynthesisUtterance();
-    utterance.text = text;
-    utterance.voice = voice;
-    utterance.onend = handleEnd;
-    utterance.rate = rate;
-    utterance.pitch = pitch;
-    window.speechSynthesis.speak(utterance);
-  };
-
-  const cancel = () => {
-    setSpeaking(false);
-    window.speechSynthesis.cancel();
-  };
 
   return {
     supported,
     speak,
     speaking,
-    cancel,
     voices,
+    cancel,
+    pause,
+    resume,
   };
 };
 
 export default useSpeechSynthesis;
-
-
-// usage
-
-// function App() {
-//   const [value, setValue] = useState('');
-//   const [ended, setEnded] = useState(false);
-//   const onEnd = () => setEnded(true);
-//   const {
-//     cancel,
-//     speak,
-//     speaking,
-//     supported,
-//     voices,
-//   } = useSpeechSynthesis({ onEnd });
-
-//   if (!supported) {
-//     return 'Speech is not supported. Upgrade your browser';
-//   }
-
-//   return (
-//     <div>
-//       <textarea
-//         value={value}
-//         onChange={event => setValue(event.target.value)}
-//       />
-//       <button onClick={() => speak({ text: value, voice: voices[1] })}>Speak</button>
-//       <button onClick={cancel}>Cancel</button>
-//       <p>{speaking && 'Voice is speaking'}</p>
-//       <p>{ended && 'Voice has ended'}</p>
-//       <div>
-//         <h2>Voices:</h2>
-//         <div>
-//           {voices.map(voice => <p key={voice}>{voice}</p>)}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
