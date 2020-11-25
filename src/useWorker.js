@@ -39,7 +39,6 @@ function useWorker(
 
 export default useWorker;
 
-
 // usage
 
 // function App() {

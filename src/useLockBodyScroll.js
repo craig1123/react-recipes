@@ -16,7 +16,6 @@ function useLockBodyScroll() {
 
 export default useLockBodyScroll;
 
-
 // Usage
 
 // function Modal({ title, content, onClose }){

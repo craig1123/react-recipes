@@ -26,7 +26,6 @@ function useDebounce(value, delay) {
 
 export default useDebounce;
 
-
 // Usage
 
 // const App = () => {

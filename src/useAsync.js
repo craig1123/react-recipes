@@ -30,7 +30,6 @@ const useAsync = (asyncFunction, immediate = true) => {
 
 export default useAsync;
 
-
 // Usage
 
 // const myFunction = () => {

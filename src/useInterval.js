@@ -24,9 +24,7 @@ function useInterval(callback, delay, runOnLoad = false, effectDependencies = []
   }, [delay, ...effectDependencies]);
 }
 
-
 export default useInterval;
-
 
 // Usage
 

@@ -20,7 +20,6 @@ function useMultiKeyPress() {
   return keysPressed;
 }
 
-
 export default useMultiKeyPress;
 
 // Usage

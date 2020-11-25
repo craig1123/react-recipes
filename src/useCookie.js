@@ -28,7 +28,6 @@ const useCookie = (cookieName, initialValue) => {
 
 export default useCookie;
 
-
 // Usage
 
 // const App = () => {

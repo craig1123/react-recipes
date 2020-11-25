@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-
 const cachedScripts = [];
 
 function useScript(src) {

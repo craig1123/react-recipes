@@ -1,4 +1,6 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
+import {
+  useRef, useEffect, useState, useCallback,
+} from 'react';
 import isClient from '../utils/isClient';
 
 // original idea/source https://github.com/MikeyParton/react-speech-kit/blob/master/src/useSpeechRecognition.js
@@ -52,7 +54,9 @@ const useSpeechRecognition = (props = {}) => {
   const listen = useEventCallback(
     (args = {}) => {
       if (listening || !supported) return;
-      const { lang = '', interimResults = true, continuous = false, maxAlternatives = 1, grammars } = args;
+      const {
+        lang = '', interimResults = true, continuous = false, maxAlternatives = 1, grammars,
+      } = args;
       setListening(true);
       recognitionRef.current.lang = lang;
       recognitionRef.current.interimResults = interimResults;

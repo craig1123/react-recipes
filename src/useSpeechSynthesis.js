@@ -5,7 +5,9 @@ import { useEffect, useState } from 'react';
 const noop = () => {};
 
 const useSpeechSynthesis = (props = {}) => {
-  const { onBoundary, onEnd = noop, onError = noop, onPause = noop, onResume = noop } = props;
+  const {
+    onBoundary, onEnd = noop, onError = noop, onPause = noop, onResume = noop,
+  } = props;
   const [voices, setVoices] = useState([]);
   const [speaking, setSpeaking] = useState(false);
   const supported = !!window.speechSynthesis;
@@ -40,7 +42,9 @@ const useSpeechSynthesis = (props = {}) => {
   };
 
   const speak = (args = {}) => {
-    const { voice = null, text = '', rate = 1, pitch = 1, volume = 1, lang = 'en-US', continuous = false } = args;
+    const {
+      voice = null, text = '', rate = 1, pitch = 1, volume = 1, lang = 'en-US', continuous = false,
+    } = args;
     if (!supported) return;
     window.speechSynthesis.cancel();
     const utterance = new window.SpeechSynthesisUtterance();

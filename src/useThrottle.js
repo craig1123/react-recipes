@@ -33,7 +33,6 @@ const useThrottle = (value, ms = 200) => {
 
 export default useThrottle;
 
-
 // Usage
 
 // const App = ({ value }) => {

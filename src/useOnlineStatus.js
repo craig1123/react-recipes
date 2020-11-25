@@ -19,7 +19,6 @@ function useOnlineStatus() {
 
 export default useOnlineStatus;
 
-
 // Usage
 
 // function App() {

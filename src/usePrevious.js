@@ -16,7 +16,6 @@ function usePrevious(value) {
 
 export default usePrevious;
 
-
 // Usage
 
 // function App() {
