@@ -10,8 +10,8 @@ Create, read, or delete cookies (mmmm...cookie)
 ## Returns
 
 - `cookieValue: String`: Current value of the cookie
-- `updateCookie: Function(string)`: Set a new value of the cookie
-- `deleteCookie: Function()`: Bye bye cookie
+- `updateCookie: Function(value: String, days = 365, path = '/')`: Set a new value of the cookie
+- `deleteCookie: Function(path = '/')`: Bye bye cookie
 
 ## Usage
 
