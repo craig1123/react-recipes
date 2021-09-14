@@ -9,11 +9,10 @@ function getCurrentLocation() {
 
 const listeners = [];
 
-/** All components using the 'useLocation' hook will update. */
-
 function useLocation() {
   const [{ pathname, search }, setLocation] = useState(getCurrentLocation());
 
+  /** All components using the 'useLocation' hook will update. */
   function notify() {
     listeners.forEach(listener => listener());
   }
