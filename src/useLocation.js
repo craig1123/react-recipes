@@ -42,12 +42,12 @@ function useLocation() {
     notify();
   }
 
-  return [
+  return {
     push,
     replace,
     pathname,
     search,
-  ];
+  };
 }
 
 export default useLocation;
