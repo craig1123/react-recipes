@@ -29,3 +29,4 @@ export { default as useWhyDidYouUpdate } from './useWhyDidYouUpdate';
 export { default as useWindowScroll } from './useWindowScroll';
 export { default as useWindowSize } from './useWindowSize';
 export { default as useWorker } from './useWorker';
+export { default as useLocation } from './useLocation';
