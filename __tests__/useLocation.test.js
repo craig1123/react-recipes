@@ -38,7 +38,6 @@ describe('useLocation', () => {
     const { result } = renderHook(() => useLocation());
     act(() => {
       search = result.current.search;
-      console.log(search);
     });
     expect(search).toBe('?param1=test&testing=true');
   });
@@ -52,7 +51,6 @@ describe('useLocation', () => {
     const { result } = renderHook(() => useLocation());
     act(() => {
       pathname = result.current.pathname;
-      console.log(pathname);
     });
     expect(pathname).toBe('/testing');
   });

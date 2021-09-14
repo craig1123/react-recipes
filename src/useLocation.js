@@ -55,7 +55,7 @@ export default useLocation;
 // Usage
 
 // function App() {
-//   const [push, replace, pathname, search] = useLocation()
+//   const { push, replace, pathname, search } = useLocation()
 
 //   return (
 //     <div>
@@ -66,7 +66,7 @@ export default useLocation;
 //       <div>
 //         // Replace currento route for /example route
 //         <button onClick={() => replace('/example?search=example2')}>
-//           Replace to /example?example2
+//           Replace to /example?search=example2
 //         </button>
 //       </div>
 //        // Get current pathname
