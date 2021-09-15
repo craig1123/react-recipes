@@ -59,3 +59,4 @@ yarn add react-recipes
 | 🥖 [`useWindowScroll`](./docs/useWindowScroll.md)           | { x, y }                                                      | -                                                                                       |
 | 🥮 [`useWindowSize`](./docs/useWindowSize.md)               | { height, width }                                             | (initialWidth, initialHeight)                                                           |
 | 🥝 [`useWorker`](./docs/useWorker.md)                       | worker instance                                               | (scriptPath, workerOptions, attributes)                                                 |
+| :pushpin: [`useLocation`](./docs/useLocation.md)            | { push, replace, pathname, search }                           | -                                                                                       |
