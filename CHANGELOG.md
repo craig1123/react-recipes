@@ -2,7 +2,7 @@
 
 #### Features :moneybag:
 
-- [PR](https://github.com/craig1123/react-recipes/pull/55) Added usePrint hook, tests, and documenation
+- [PR](https://github.com/craig1123/react-recipes/pull/57) Added usePrint hook, tests, and documenation
 
 ## v1.2.0 (2021-09-12)
 
