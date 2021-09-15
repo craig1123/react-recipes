@@ -1,3 +1,13 @@
+## v1.2.0 (2021-09-12)
+
+#### Features :moneybag:
+
+- [PR](https://github.com/craig1123/react-recipes/pull/54) Added useLocation hook. Tests + documenation as well
+
+## v1.1.0 (2020-11-25)
+
+React 17 Compatible
+
 ## v1.1.0 (2020-07-19)
 
 #### Features :moneybag:
