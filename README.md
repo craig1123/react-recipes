@@ -44,6 +44,7 @@ yarn add react-recipes
 | 🍐 [`useIsClient`](./docs/useIsClient.md)                   | isClient                                                      | -                                                                                       |
 | 🥧 [`useKeyPress`](./docs/useKeyPress.md)                   | keyPressed                                                    | (targetKey)                                                                             |
 | 🍱 [`useLocalStorage`](./docs/useLocalStorage.md)           | [storedValue, setValue]                                       | (key, initialValue)                                                                     |
+| 📍 [`useLocation`](./docs/useLocation.md)                   | { push, replace, pathname, search }                           | -                                                                                       |
 | 🍋 [`useLockBodyScroll`](./docs/useLockBodyScroll.md)       | -                                                             | -                                                                                       |
 | 🍉 [`useMedia`](./docs/useMedia.md)                         | value                                                         | (queries, values, defaultValue)                                                         |
 | 🥭 [`useMultiKeyPress`](./docs/useMultiKeyPress.md)         | keysPressed                                                   | (targetKey)                                                                             |
@@ -51,6 +52,7 @@ yarn add react-recipes
 | 🥑 [`useOnClickOutside`](./docs/useOnClickOutside.md)       | -                                                             | (ref, callback)                                                                         |
 | 🥒 [`useOnlineStatus`](./docs/useOnlineStatus.md)           | onlineStatus                                                  | -                                                                                       |
 | 🍿 [`usePrevious`](./docs/usePrevious.md)                   | previous                                                      | (value)                                                                                 |
+| 🖨 [`usePrint`](./docs/usePrint.md)                          | { ref, handlePrint }                                          | (style = {})                                                                            |
 | 🍣 [`useScript`](./docs/useScript.md)                       | [loaded, error]                                               | (src)                                                                                   |
 | 🍖 [`useSpeechRecognition`](./docs/useSpeechRecognition.md) | { supported, listen, listening, stop }                        | ({ onEnd, onResult, onError })                                                          |
 | 🍗 [`useSpeechSynthesis`](./docs/useSpeechSynthesis.md)     | { supported, speak, speaking, cancel, voices, pause, resume } | ({ onEnd, onResult, onError, onBoundary, onPause, onResume })                           |
@@ -59,4 +61,3 @@ yarn add react-recipes
 | 🥖 [`useWindowScroll`](./docs/useWindowScroll.md)           | { x, y }                                                      | -                                                                                       |
 | 🥮 [`useWindowSize`](./docs/useWindowSize.md)               | { height, width }                                             | (initialWidth, initialHeight)                                                           |
 | 🥝 [`useWorker`](./docs/useWorker.md)                       | worker instance                                               | (scriptPath, workerOptions, attributes)                                                 |
-| :pushpin: [`useLocation`](./docs/useLocation.md)            | { push, replace, pathname, search }                           | -                                                                                       |
