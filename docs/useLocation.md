@@ -1,4 +1,4 @@
-# :pushpin: `useLocation`
+# 📍 `useLocation`
 
 Read and manipulate window.location
 

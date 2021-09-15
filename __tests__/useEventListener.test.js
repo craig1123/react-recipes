@@ -6,7 +6,6 @@ import '@testing-library/dom';
 
 import useEventListener from '../src/useEventListener';
 
-
 const mouseMoveEvent = { clientX: 100, clientY: 200 };
 let hackHandler = null;
 

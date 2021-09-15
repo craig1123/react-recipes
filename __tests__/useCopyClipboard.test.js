@@ -1,15 +1,11 @@
-
 import React from 'react';
-import {
-  cleanup, fireEvent, render, act,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, act } from '@testing-library/react';
 import useClipboard from '../src/useCopyClipboard';
 
 afterEach(cleanup);
 
 // mock copying to clipboard
-jest.mock('../utils/copyToClipboard.js', () => jest.fn(text => !!text));
-
+jest.mock('../utils/copyToClipboard.js', () => jest.fn((text) => !!text));
 
 describe('useClipboard', () => {
   test('`isCopied` becomes false after `successDuration` time ellapses', () => {

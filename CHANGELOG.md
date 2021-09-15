@@ -1,8 +1,14 @@
+## v1.3.0 (2021-09-15)
+
+#### Features :moneybag:
+
+- [PR](https://github.com/craig1123/react-recipes/pull/55) Added usePrint hook, tests, and documenation
+
 ## v1.2.0 (2021-09-12)
 
 #### Features :moneybag:
 
-- [PR](https://github.com/craig1123/react-recipes/pull/54) Added useLocation hook. Tests + documenation as well
+- [PR](https://github.com/craig1123/react-recipes/pull/54) Added useLocation hook, tests, and documenation
 
 ## v1.1.0 (2020-11-25)
 

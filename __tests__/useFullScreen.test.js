@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import React, { createRef } from 'react';
 import { act, cleanup, renderHook } from '@testing-library/react-hooks';
 import { fireEvent, render } from '@testing-library/react';
