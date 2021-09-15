@@ -22,13 +22,12 @@ function useLocation() {
   }
 
   useEffect(() => {
-    window.addEventListener('popstate', handleChange);
-    return () => window.removeEventListener('popstate', handleChange);
-  }, []);
-
-  useEffect(() => {
     listeners.push(handleChange);
-    return () => listeners.splice(listeners.indexOf(handleChange), 1);
+    window.addEventListener('popstate', handleChange);
+    return () => {
+      listeners.splice(listeners.indexOf(handleChange), 1);
+      window.removeEventListener('popstate', handleChange);
+    };
   }, []);
 
   function push(url) {
