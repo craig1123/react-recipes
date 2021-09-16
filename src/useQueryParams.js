@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import useLocation from './useLocation';
 
 export default function useQueryParams() {
