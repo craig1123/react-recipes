@@ -1,6 +1,6 @@
 {
   "name": "react-recipes",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A React Hooks utility library containing popular customized hooks",
   "author": "@craig1123",
   "sideEffects": false,

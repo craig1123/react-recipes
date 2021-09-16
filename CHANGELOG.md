@@ -1,3 +1,9 @@
+## v1.4.0 (2021-09-15)
+
+#### Features :moneybag:
+
+- [PR](https://github.com/craig1123/react-recipes/pull/58) Added useQueryParams hook, tests, and documenation
+
 ## v1.3.0 (2021-09-15)
 
 #### Features :moneybag:
