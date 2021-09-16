@@ -23,6 +23,7 @@ export { default as useOnClickOutside } from './useOnClickOutside';
 export { default as useOnlineStatus } from './useOnlineStatus';
 export { default as usePrevious } from './usePrevious';
 export { default as usePrint } from './usePrint';
+export { default as useQueryParams } from './useQueryParams';
 export { default as useScript } from './useScript';
 export { default as useSpeechRecognition } from './useSpeechRecognition';
 export { default as useSpeechSynthesis } from './useSpeechSynthesis';
