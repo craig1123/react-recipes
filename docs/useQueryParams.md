@@ -1,6 +1,6 @@
 # 📍 `useQueryParams`
 
-Read and manipulate window.location
+Gets and sets query params
 
 ## Usage
 
