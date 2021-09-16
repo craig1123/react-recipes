@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import useLocation from './useLocation';
 
-// getParams & setParams
-
 export default function useQueryParams() {
   const {
     replace, search,
@@ -15,18 +13,8 @@ export default function useQueryParams() {
   };
 
   const setParams = (params) => {
-    console.log(params);
-    const urlSearchParams = new URLSearchParams(params);
-    replace(`?${urlSearchParams.toString()}`);
-
-    console.log(urlSearchParams.toString());
-    // urlSearchParams.forEach((item) => console.log(item));
-    // const urlSearchParams = new URLSearchParams();
-    // Object.entries(params).forEach(([key, value]) => {
-    //   console.log(key, value);
-    //   urlSearchParams.append(key, value);
-    // });
-    // replace(`?${urlSearchParams.toString()}`);
+    const stringfiedUrlSearchParams = new URLSearchParams(params).toString();
+    replace(`?${stringfiedUrlSearchParams}`);
   };
 
   useEffect(() => {
@@ -37,3 +25,34 @@ export default function useQueryParams() {
     getParams, setParams,
   };
 }
+
+// Usage
+
+// function App() {
+//   const { getParams, setParams } = useQueryParams();
+//   const params = getParams();
+//
+//   return (
+//     <div>
+//       <button
+//         onClick={() => {
+//           setParams({ page: 1, order: 'ASC' });
+//         }}
+//       >
+//         Set Params
+//       </button>
+//       <button
+//         onClick={() => {
+//           setParams({});
+//         }}
+//       >
+//         Clear params
+//       </button>
+//       {Object.entries(params).map(([paramKey, paramValue]) => (
+//         <p>
+//           {paramKey}: {paramValue}
+//         </p>
+//       ))}
+//     </div>
+//   );
+// }
