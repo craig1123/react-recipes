@@ -17,10 +17,6 @@ export default function useQueryParams() {
     replace(`?${stringfiedUrlSearchParams}`);
   };
 
-  useEffect(() => {
-    getParams();
-  }, [search]);
-
   return {
     getParams, setParams,
   };
