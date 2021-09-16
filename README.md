@@ -53,6 +53,7 @@ yarn add react-recipes
 | 🥒 [`useOnlineStatus`](./docs/useOnlineStatus.md)           | onlineStatus                                                  | -                                                                                       |
 | 🍿 [`usePrevious`](./docs/usePrevious.md)                   | previous                                                      | (value)                                                                                 |
 | 🖨 [`usePrint`](./docs/usePrint.md)                          | { ref, handlePrint }                                          | (style = {})                                                                            |
+| :question: [`useQueryParams`](./docs/useQueryParams.md)     | { getParams, setParams }                                      | -                                                                                       |
 | 🍣 [`useScript`](./docs/useScript.md)                       | [loaded, error]                                               | (src)                                                                                   |
 | 🍖 [`useSpeechRecognition`](./docs/useSpeechRecognition.md) | { supported, listen, listening, stop }                        | ({ onEnd, onResult, onError })                                                          |
 | 🍗 [`useSpeechSynthesis`](./docs/useSpeechSynthesis.md)     | { supported, speak, speaking, cancel, voices, pause, resume } | ({ onEnd, onResult, onError, onBoundary, onPause, onResume })                           |
