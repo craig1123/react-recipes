@@ -61,4 +61,5 @@ yarn add react-recipes
 | 🍷 [`useWhyDidYouUpdate`](./docs/useWhyDidYouUpdate.md)     | -                                                             | (name, props)                                                                           |
 | 🥖 [`useWindowScroll`](./docs/useWindowScroll.md)           | { x, y }                                                      | -                                                                                       |
 | 🥮 [`useWindowSize`](./docs/useWindowSize.md)               | { height, width }                                             | (initialWidth, initialHeight)                                                           |
-| 🥝 [`useWorker`](./docs/useWorker.md)                       | worker instance                                               | (scriptPath, workerOptions, attributes)                                                 |
+| 🥝 [`useWorker`](./docs/useWorker.md)                       | worker instance                                               | (scriptPath, workerOptions, attributes)   
+| 👁 [`useIntersectionObserver`](./docs/useWorker.md)                       | { ref, isContentVisible }                                               | (options)                                                 |
